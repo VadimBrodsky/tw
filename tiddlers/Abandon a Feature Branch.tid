@@ -1,0 +1,10 @@
+created: 20141104172837289
+modified: 20141104172845440
+tags: Git
+title: Abandon a Feature Branch
+type: text/vnd.tiddlywiki
+
+```bash
+git checkout master
+git branch -D bad-branch
+```

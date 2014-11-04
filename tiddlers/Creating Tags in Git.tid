@@ -1,0 +1,26 @@
+created: 20141104173021022
+modified: 20141104173218451
+tags: Git
+title: Creating Tags in Git
+type: text/vnd.tiddlywiki
+
+* Annotated Tags: 
+ ** Stored as full objects in the Git database, 
+ ** Checksummed
+ ** Contain the tagger name, e-mail, and date, 
+ ** Have a tagging message and 
+ ** Can be signed and verified with GPG.
+ ** Specify `-a` when you run the `tag` command.
+* Lightweight Tags: 
+ ** The commit checksum stored in a file — no other information is kept. 
+ ** To create a lightweight tag, don’t supply any of the `-a`, `-s`, or `-m` options.
+
+```bash
+git tag -a v1.4
+git tag -a v1.4 -m 'my version 1.4'
+```
+
+```bash
+git push --tags
+git push --tags <tagname>
+```

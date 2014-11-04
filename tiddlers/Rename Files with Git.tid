@@ -1,0 +1,11 @@
+created: 20141104172700588
+modified: 20141104172719778
+tags: Git
+title: Rename Files with Git
+type: text/vnd.tiddlywiki
+
+Renaming files with Git tracking.
+
+```bash
+git mv README.rdoc README.md
+```

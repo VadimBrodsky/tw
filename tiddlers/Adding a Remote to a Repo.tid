@@ -1,0 +1,10 @@
+created: 20141104172545158
+modified: 20141104172559421
+tags: Git
+title: Adding a Remote to a Repo
+type: text/vnd.tiddlywiki
+
+```bash
+git remote add origin https://github.com/<username>/first_app.git
+git push -u origin master
+```

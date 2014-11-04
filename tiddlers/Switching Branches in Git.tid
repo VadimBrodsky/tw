@@ -1,0 +1,9 @@
+created: 20141104172804178
+modified: 20141104172823169
+tags: Git
+title: Switching Branches in Git
+type: text/vnd.tiddlywiki
+
+```bash
+git checkout branch-name
+```

@@ -1,0 +1,12 @@
+created: 20141104172413352
+modified: 20141104172648019
+tags: Git
+title: Initial Git Setup
+type: text/vnd.tiddlywiki
+
+Setup user name and email that will appear in commits.
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email your.email@example.com
+```

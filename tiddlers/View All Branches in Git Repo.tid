@@ -1,0 +1,10 @@
+created: 20141104172730163
+modified: 20141104172754538
+tags: Git
+title: View All Branches in Git Repo
+type: text/vnd.tiddlywiki
+
+```bash
+git branch
+git branch -a
+```

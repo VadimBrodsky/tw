@@ -1,0 +1,10 @@
+created: 20141104172321450
+modified: 20141104172337953
+tags: Git
+title: Track a remote branch with an Existing Branch
+type: text/vnd.tiddlywiki
+
+```bash
+git branch -u remote/branch_name
+git branch -u remote/branch_name branch_name
+```

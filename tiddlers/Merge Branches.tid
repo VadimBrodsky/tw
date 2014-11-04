@@ -1,0 +1,10 @@
+created: 20141104172945391
+modified: 20141104173004270
+tags: Git
+title: Merge Branches
+type: text/vnd.tiddlywiki
+
+```bash
+git checkout master
+git merge branch-name
+```

@@ -1,0 +1,9 @@
+created: 20141104172348409
+modified: 20141104172400408
+tags: Git
+title: Pushing a Local Branch to Github
+type: text/vnd.tiddlywiki
+
+```bash
+git push origin branch-name
+```

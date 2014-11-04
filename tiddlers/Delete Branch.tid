@@ -1,0 +1,9 @@
+created: 20141104172853273
+modified: 20141104172902575
+tags: Git
+title: Delete Branch
+type: text/vnd.tiddlywiki
+
+```bash
+git branch -d branch-name
+```

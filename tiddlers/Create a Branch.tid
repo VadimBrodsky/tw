@@ -1,0 +1,12 @@
+created: 20141104172909328
+modified: 20141104172930711
+tags: Git
+title: Create a Branch
+type: text/vnd.tiddlywiki
+
+* To create a new branch use the `checkout` command.
+* Use the `-b` flag to switch to the new branch at creation.
+
+```bash
+git checkout -b branch-name
+```

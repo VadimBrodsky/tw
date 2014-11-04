@@ -1,0 +1,9 @@
+created: 20141104172458240
+modified: 20141104172530725
+tags: SublimeText
+title: Setting SublimeText Command in Terminal
+type: text/vnd.tiddlywiki
+
+```bash
+git config --global core.editor "subl -w"
+```

@@ -1,0 +1,11 @@
+created: 20141104171855673
+modified: 20141104171943047
+tags: Git
+title: Checkout in Git
+type: text/vnd.tiddlywiki
+
+Checkout the previous repository and discard all current changes.
+
+```bash
+git checkout -f
+```

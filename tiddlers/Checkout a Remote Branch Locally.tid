@@ -1,0 +1,11 @@
+created: 20141104172002663
+modified: 20141104172019414
+tags: Git
+title: Checkout a Remote Branch Locally
+type: text/vnd.tiddlywiki
+
+```bash
+git branch -a
+git checkout origin/branch_name
+git checkout -b branch_name origin/branch_name
+```
