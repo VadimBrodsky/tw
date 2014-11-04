@@ -1,0 +1,6 @@
+created: 20141104222358685
+modified: 20141104222401733
+title: Git
+type: text/vnd.tiddlywiki
+
+<$list filter="[tag[Git]!has[draft.of]]">
