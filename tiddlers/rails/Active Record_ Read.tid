@@ -1,0 +1,61 @@
+created: 20141105120048706
+modified: 20141105120107406
+tags: Rails Rails-Active-Record
+title: Active Record: Read
+type: text/vnd.tiddlywiki
+
+Every model class understand the class `find` method. The `find` method can be called in 4 ways:
+
+* `find(:id)`: finds a single record by its unique `id` or multiple records if `:id` is an attay of ids.
+* `all`: finds all records in the table.
+* `first`: finds the first record.
+* `last`: finds the last record.
+
+```ruby
+article = Article.find(3)
+#=> #<Article id: 3 ...>
+```
+
+Active Record raises a `RecordNotFound` exception when it cannot find any records with the provided `id`.
+
+```ruby
+begin
+  Article.find(1037)
+rescue ActiveRecord::RecordNotFound
+  puts "We couldn't find that record"
+end
+```
+
+To get the first record from the database by using the `first` method. This always returns exactly one item, unless the table is empty it will return `nil`. It's not necessarily the first record  in the table, it depends on the database software and the default order in which the records are retireived.
+
+```ruby
+Article.first
+#=> #<Article id: 1 ...>
+```
+
+The `last` method works exactly the same as `first`, but records are retireived in the inverse order of `first`.
+
+```ruby
+Article.last
+#=> #<Article id: 5 ...>
+```
+
+To retreive all of the records from the database use the `all` method.
+
+```ruby
+articles = Article.all
+#=> [#<Article id: 1, ...> #<Article id: 2, ...> ...]
+
+articles.first.title
+```
+
+```ruby
+articles = Article.order("published_at DESC")
+```
+
+To find a record based on other criteria, conditions that correspond to the SQL `WHERE` clause.
+
+```ruby
+Article.where(:title => 'RailsConf').first
+Article.where(:title => 'RailsConf').all
+```

@@ -1,0 +1,10 @@
+created: 20141105115711581
+modified: 20141105115812372
+tags: Rails Rails-Active-Record
+title: Rails Active Record
+type: text/vnd.tiddlywiki
+
+Active Record is the Ruby object-relational mapping (ORM) library that handles the database abstraction and interaction for Rails.
+
+* It maps tables to classes, table rows to object, table columns to object attributes.
+* Active Record lets you model real-world things in your code.

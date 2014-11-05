@@ -1,0 +1,14 @@
+created: 20141105114229992
+modified: 20141105114758747
+tags: Rails Rails-AssetPipeline
+title: Asset Pipeline: Preprocessor Engines
+type: text/vnd.tiddlywiki
+
+* We tell Rails which processor to use using filename extensions.
+* The preprocessor engines can be chained, with the code running from right to left.
+* This is achieved with the correct file extensions.
+
+```
+foobar.js.coffee -- run through CoffeeScript processor
+foobar.js.erb.coffee -- run through CoffeeScript and ERb
+```

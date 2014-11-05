@@ -1,0 +1,8 @@
+created: 20141105114254987
+modified: 20141105114343650
+tags: Rails Rails-Routes
+title: Rails Server Request Handling
+type: text/vnd.tiddlywiki
+
+* Browser => Web Server => Public => Rails Framework
+* If the request is satisfied by the public static file the Rails framework would not be accessed.

@@ -1,0 +1,18 @@
+created: 20141105114954273
+modified: 20141105115019547
+tags: Rails Rails-Routes
+title: Default Route
+type: text/vnd.tiddlywiki
+
+* More generic routing rule.
+* Uses a Regex match function.
+* Can also pass a format for file type (json, xml etc.)
+
+```ruby
+:controller/:action/:id
+match ':controller(/:action(/:id))', :via => :get
+```
+
+```ruby
+match ':controller(/:action(/:id(.:format)))', ;via => :get
+```

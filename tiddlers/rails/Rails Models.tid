@@ -1,0 +1,14 @@
+created: 20141105115043073
+modified: 20141105115121539
+tags: Rails Rails-Models
+title: Rails Models
+type: text/vnd.tiddlywiki
+
+* Communicates and abstracts the database.
+* Solves the persistence problem.
+
+```bash
+rails generate controller Users new
+rails generate controller Users new --no-test-framework
+rails generate model User name:string email:string
+```

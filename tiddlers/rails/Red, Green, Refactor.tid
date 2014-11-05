@@ -1,0 +1,9 @@
+created: 20141105113431225
+modified: 20141105113446520
+tags: Rails TDD
+title: Red, Green, Refactor
+type: text/vnd.tiddlywiki
+
+* First write a failing test, represented in many testing tools by the color red.
+* Implement code to get the test to pass, represented by the color green.
+* Refactor the code, changing its form without changing its function.

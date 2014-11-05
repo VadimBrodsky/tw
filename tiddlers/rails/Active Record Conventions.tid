@@ -1,0 +1,32 @@
+created: 20141105115836451
+modified: 20141105115856112
+tags: Rails Rails-Active-Record
+title: Active Record Conventions
+type: text/vnd.tiddlywiki
+
+Active Record achieves its zero-configuration by the use of conventions:
+
+* Class names are singluar; table names are plural.
+* Tables contain an identity column named `id`.
+
+If the table name contains underscores, the class name is assumed to be in Camel Case. All tables are assumed to have a unique columnd named `id` that is acting as the table's primary key.
+
+```ruby
+Article.column_names
+#=> ["id", "title", "body", "published_at", "created_at", "updated_at", "excerpt", "location"]
+```
+
+```ruby
+Article
+#=> Article(id: integer, title: string, body: text, published_at: datetime, created_at: datetime, updated_at: datetime, excerpt: string, location: string)
+```
+
+```ruby
+Article.methods.size
+#=> 549
+```
+
+```ruby
+Article.count
+#=> 5
+```

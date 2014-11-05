@@ -1,0 +1,12 @@
+created: 20141105113911357
+modified: 20141105113928636
+tags: ERb Rails
+title: ERb Helper: Link_To
+type: text/vnd.tiddlywiki
+
+* Rails helper `link_to` creates links as anchor tags.
+* `<%= link_to "link text", 'url', {options: "hash"} %>`
+
+```erb
+<%= link_to "sample app", '#', id: "logo" %>
+```

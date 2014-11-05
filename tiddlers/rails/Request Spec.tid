@@ -1,0 +1,12 @@
+created: 20141105113455454
+modified: 20141105113517824
+tags: Rails TDD
+title: Request Spec
+type: text/vnd.tiddlywiki
+
+* Integration tests (request spec) are done with Rspec in Rails.
+* Rails creates these tests in the `spec/requests/` folder.
+
+```bash
+rails generate integration_test static_pages
+```

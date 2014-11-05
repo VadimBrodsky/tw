@@ -1,0 +1,23 @@
+created: 20141105113556958
+modified: 20141105113615243
+tags: Rails TDD
+title: Running the Test
+type: text/vnd.tiddlywiki
+
+* To get the test to run need to add the Capybara DSL to the RSpec helper file.
+
+```ruby
+ # spec/spec_helper.rb
+ RSpec.configure do |config|
+   .
+   .
+   .
+   config.include Capybara::DSL
+ end
+```
+
+```bash
+bundle exec rspec spec/requests/static_pages_spec.rb
+bundle exec rspec spec
+bundle exec rake spec
+```

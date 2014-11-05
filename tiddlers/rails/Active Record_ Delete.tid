@@ -1,0 +1,38 @@
+created: 20141105120137550
+modified: 20141105120159196
+tags: Rails Rails-Active-Record
+title: Active Record: Delete
+type: text/vnd.tiddlywiki
+
+There are two styles of row deletion: `destroy` and `delete`.  The `destroy` style works on the instance. The `delete` style operates on the class.
+
+Firstly you need to find the record to destroy it. After the `destroy` method the object is transitioning from being _hydrated_ (all attributes retained) to _frozen_ (can't modify attributes).
+
+```ruby
+article = Article.last
+article.destroy
+```
+
+```ruby
+Article.last.destroy
+Article.destroy(1)
+```
+
+The `delete` family of methods differs from `destroy` in that they don't instantiate or perform callbacks on the object they are deleting. They remove the row immediately from the database.
+
+```ruby
+Article.delete(4)
+Article.dete([5, 6])
+```
+
+Deleting with conditions allows to delete all rows that match a condition.
+
+```ruby
+Article.delete_all("published_at" < '2011-01-01')
+```
+
+The method `delete_all` without arguments will delete all of the records in the table.
+
+```ruby
+Article.delete_all
+```

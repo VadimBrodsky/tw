@@ -1,0 +1,26 @@
+created: 20141105114023568
+modified: 20141105114037392
+tags: ERb Rails
+title: ERb Forms
+type: text/vnd.tiddlywiki
+
+* Rails has a built-in `form_for` function.
+
+```erb
+<%= form_for(@user) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+<% end %>
+```

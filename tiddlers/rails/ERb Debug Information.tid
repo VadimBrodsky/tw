@@ -1,0 +1,11 @@
+created: 20141105114011174
+modified: 20141105114021415
+tags: ERb Rails
+title: ERb Debug Information
+type: text/vnd.tiddlywiki
+
+* Add this to the view template to see debug info.
+
+```erb
+<%= debug(params) if Rails.env.development? %>
+```

@@ -1,0 +1,9 @@
+created: 20141105114139297
+modified: 20141105114821070
+tags: Rails Rails-AssetPipeline
+title: Asset Pipeline: Asset Directories
+type: text/vnd.tiddlywiki
+
+* `app/assets`: assets specific to the current application.
+* `lib/assets`: assets for libraries written by your dev team.
+* `vendor/assets`: assets from third-party vendors.

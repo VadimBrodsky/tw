@@ -1,0 +1,19 @@
+created: 20141105112835636
+modified: 20141105112859814
+tags: Rails
+title: Rails Console
+type: text/vnd.tiddlywiki
+
+* Rails comes with a modified version of IRB.
+* It has access to all of Rails methods and the app database.
+* By default it start in the development environment.
+* To start the console in a sandbox use the `--sandbox` flag, all changes will be rolled back on exit.
+
+```bash
+rails console
+rails c
+```
+
+```bash
+rails console --sandbox
+```

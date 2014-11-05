@@ -1,0 +1,14 @@
+created: 20141105112612758
+modified: 20141105112705080
+tags: Rails
+title: Creating Rails Project
+type: text/vnd.tiddlywiki
+
+* Navigate to the desired directory.
+* Run the `rails new project_name` command.
+* Can specify the database requirements with the `-d` flag.
+
+```bash
+rails new hello_app
+rails new simple_cms -d mysql
+```

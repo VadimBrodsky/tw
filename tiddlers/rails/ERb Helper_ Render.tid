@@ -1,0 +1,13 @@
+created: 20141105113953119
+modified: 20141105114005071
+tags: ERb Rails
+title: ERb Helper: Render
+type: text/vnd.tiddlywiki
+
+* Used to render partials in ERb files.
+* Partials are usually named with a leading `_`.
+* Examples: `/app/views/layouts/_shim.html.erb`.
+
+```erb
+<%= render 'layouts/shim' %>
+```

@@ -1,0 +1,13 @@
+created: 20141105113718212
+modified: 20141105113735355
+tags: ERb Rails
+title: ERb Helper: Yield
+type: text/vnd.tiddlywiki
+
+* The `yield` method inserts the contents of each page into the site layout.
+
+```erb
+<div class="container">
+  <%= yield %>
+</div>
+```

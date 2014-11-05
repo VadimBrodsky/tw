@@ -1,0 +1,7 @@
+color: #ff2600
+created: 20141105114634694
+modified: 20141105121602136
+title: Rails
+type: text/vnd.tiddlywiki
+
+<$list filter="[tag[Rails]!has[draft.of]]">

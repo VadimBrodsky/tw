@@ -1,0 +1,13 @@
+created: 20141105115322113
+modified: 20141105115339558
+tags: Rails Rails-Models
+title: Validations: Length
+type: text/vnd.tiddlywiki
+
+* Checks the length of the entered data.
+* Using the `:length` and the `:maximum` parameters.
+
+```ruby
+#/app/models/user.rb
+validates :name, length: { maximum: 50 }
+```

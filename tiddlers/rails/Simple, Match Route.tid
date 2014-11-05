@@ -1,0 +1,20 @@
+created: 20141105114930302
+modified: 20141105114946371
+tags: Rails Rails-Routes
+title: Simple, Match Route
+type: text/vnd.tiddlywiki
+
+* Matching the string and sends it to the controller and action via get.
+* Not very flexible.
+* This also creates a named routes for use in controllers and views: `about_path` and `about_url`.
+  * For most app link use `path`.
+  * For redirects use `url`.
+
+```ruby
+get "demo/index"
+```
+
+```ruby
+match "demo/index", :to => "demo#index", :via => :get
+match '/about', to: 'static_pages#about', via : 'get'
+```

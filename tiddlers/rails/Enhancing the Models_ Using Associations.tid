@@ -1,0 +1,17 @@
+created: 20141105120458571
+modified: 20141105120620600
+tags: Rails Rails-Active-Record Rails-Models
+title: Enhancing the Models: Using Associations
+type: text/vnd.tiddlywiki
+
+Defines the way models relate and interact with one another, by relating the different tables in the database. In a relational database the tables relate by using a foreign key reference in one table to the primary key of another table.
+
+Rails uses a convention of naming the foreign key column in singular lowercase name of the target class with `_id` appended.
+
+`Books` => `book` => `book_id`
+
+```ruby
+#{singular_name_of_parent_class}_id
+```
+
+The table that is doing the referencing is the one that needs to create the foreign-key column. The model that contains the "belongs-to" needs to have the foreign key column.

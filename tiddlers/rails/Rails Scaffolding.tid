@@ -1,0 +1,11 @@
+created: 20141105113016000
+modified: 20141105113035231
+tags: Rails
+title: Rails Scaffolding
+type: text/vnd.tiddlywiki
+
+* Rails has a scaffolding script that generates code for data models.
+
+```bash
+rails generate scaffold User name:string email:string
+```

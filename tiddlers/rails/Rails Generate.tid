@@ -1,0 +1,15 @@
+created: 20141105112904933
+modified: 20141105112938507
+tags: Rails
+title: Rails Generate
+type: text/vnd.tiddlywiki
+
+* Rails `generate` command helps to create many things.
+* To list all of the thing that rails can generate, run `rails generate`
+* `rails generate GENERATOR [args] [options]`
+
+```bash
+rails generate
+rails generate controller demo index
+rails generate controller StaticPages home help
+```

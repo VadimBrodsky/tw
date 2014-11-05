@@ -1,0 +1,23 @@
+created: 20141105112323741
+modified: 20141105112601320
+tags: Rails
+title: Installing Rails
+type: text/vnd.tiddlywiki
+
+# Installing Rails
+# Install Bundler gem first.
+# Rehash the rbenv environment to load bundler.
+# Install the Rails gem.
+#* Optionally install without docs: `--no-ri --no-rdoc`
+#* Install a specific version: `--version 4.0.0`
+# Install the MySQL gem.
+
+```bash
+gem install bundler
+rbenv rehash
+bundle -v
+gem install rails
+rbenv rehash
+rails -v
+gem install mysql2
+```

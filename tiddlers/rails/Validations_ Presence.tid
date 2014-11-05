@@ -1,0 +1,17 @@
+created: 20141105115303737
+modified: 20141105115319176
+tags: Rails Rails-Models
+title: Validations: Presence
+type: text/vnd.tiddlywiki
+
+* Checks if the data entered is not blank.
+
+```ruby
+#/app/models/user.rb
+validates :name, presence: true
+```
+
+```ruby
+user.valid?
+user.errors.full_messages
+```

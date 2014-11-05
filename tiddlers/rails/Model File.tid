@@ -1,0 +1,40 @@
+created: 20141105115216530
+modified: 20141105115243219
+tags: Rails Rails-Models
+title: Model File
+type: text/vnd.tiddlywiki
+
+* Model files are stores in `app/models/`.
+* `User.new`: creates a new user object.
+
+```ruby
+user1 = User.new(name: "John Doe", email: "jd@email.com")
+user1.save
+user1.name      #=> "John Doe"
+user2 = User.create(name: "Jane Doe", email: "janed@mail.com")
+user1.destroy
+```
+
+```ruby
+User.find(1)
+User.find_by_email("jd@email.com")
+User.find_by(email: "jd@email.com")  # Rails 4.0 preferred method
+```
+
+```ruby
+User.first
+User.all
+User.count
+```
+
+```ruby
+user1
+user1.email = "test@test.com"
+# user1.reload.email
+user1.save
+```
+
+```ruby
+user2.update_attributes(name: "Jenny Doe", email: "jend@mail.com")
+user2.update_attribute(:name, "Jane Doe")
+```

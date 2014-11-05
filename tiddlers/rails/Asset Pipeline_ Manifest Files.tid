@@ -1,0 +1,18 @@
+created: 20141105114156496
+modified: 20141105114808614
+tags: Rails Rails-AssetPipeline
+title: Asset Pipeline: Manifest Files
+type: text/vnd.tiddlywiki
+
+* Once the assets are in their logical locations, you can use manifest files to tell Rails (via the Sprockets gem) how to combine them to form single files. 
+* This applies to CSS and JavaScript but not to images.
+* `/app/assets/stylesheets/application.css`
+  ** `*= require_tree .`: ensures that all CSS files in the current directory (including the tree subdirectories) are included into the application CSS.
+  ** `*= require_self`: specifies where in the loading sequence the CSS in `application.css` itself gets included.
+
+```css
+/*
+ *= require_self
+ *= require_tree .
+ */
+```

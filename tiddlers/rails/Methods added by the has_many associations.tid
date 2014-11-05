@@ -1,0 +1,18 @@
+created: 20141105121111161
+modified: 20141105121156795
+tags: Rails Rails-Active-Record
+title: Methods added by the has_many associations
+type: text/vnd.tiddlywiki
+
+| !Method                              | !Description                        |
+|`user.articles`                       |returns an array of all the associated articles. An empty array is returned if no articles are found. |
+|`user.articles=(articles)`            |replaces the articles collection with the one supplied. |
+|`user.articles << article`            |adds one or more articles to the collection and saves their foreign keys. |
+|`user.articles.delete(articles)`      |removes one or more articles from the collection by setting their foreign keys to `NULL`. |
+|`user.articles.empty?`                |returns true if there is no associated article objects for this user. |
+|`user.articles.size`                  |returns the number of associated article objects for this user. |
+|`user.article_ids`                    |returns an array of associated article ids. |
+|`user.articles.clear`                 |clears all associated objects from the association by setting their foreign keys to `NULL`. |
+|`user.articles.find`                  |performs a find that is automatically scoped off the association, it finds only within items that belong to user. |
+|`user.articles.build(attributes={})`  |returns a new article object that has been instantiated with attributres and linked to user though a foreign key but hasn't yet been saved. |
+|`user.articles.create(attributes={})` |returns a new article object that has been instantiated with attributes and linked to user through a foreign key and has already been saved. |

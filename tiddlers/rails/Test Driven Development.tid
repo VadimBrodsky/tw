@@ -1,0 +1,12 @@
+created: 20141105113331320
+modified: 20141105113418358
+tags: Rails TDD
+title: Test Driven Development
+type: text/vnd.tiddlywiki
+
+* Behavior-driven development (BDD) is a variant of test-driven development (TDD) that emphasizes the behavior of the application rather than its precise implementation.
+* Integration tests: known as request specs in the context of RSpec, allow us to simulate the actions of a user interacting with our application using a web browser.
+* The defining quality of TDD is writing tests first, before the application code.
+* By writing a failing test first and then implementing the application code to get it to pass, we increase our confidence that the test is actually covering the functionality we think.
+* When you aren’t at all sure how to solve a given programming problem, it’s often useful to skip the tests and write only application code, just to get a sense of what the solution will look like.
+* Once you see the general shape of the solution, you can then use TDD to implement a more polished version.

@@ -1,0 +1,11 @@
+created: 20141105115505733
+modified: 20141105115532605
+tags: Rails Rails-Controllers
+title: Rails Controllers
+type: text/vnd.tiddlywiki
+
+```ruby
+def show
+  @user = User.find(params[:id])
+end
+```
