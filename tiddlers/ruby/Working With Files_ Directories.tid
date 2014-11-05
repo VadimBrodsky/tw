@@ -1,0 +1,40 @@
+created: 20141105014421541
+modified: 20141105014513444
+tags: Ruby
+title: Working With Files: Directories
+type: text/vnd.tiddlywiki
+
+* Ruby has a direcotry class: `Dir`.
+* `Dir.pwd`: print working directory.
+* `Dir.chdir`: change directory, like `cd` in bash.
+* `Dir.entries(folder name)`: array of the files in a folder.
+
+```ruby
+File.dirname(__FILE__)
+Dir.pwd
+Dir.chdir('..')
+Dir.chdir('', 'Users', "Desktop")
+Dir.entries('.')
+```
+
+```ruby
+Dir.entries('.').each do |entry|
+  print entry + ': '
+  if File.file?(entry) && File.readable?(entry)
+    File.open(entry, 'r') do |file|
+      puts file.gets
+    end
+  else
+    puts
+  end
+end
+```
+
+```ruby
+Dir.foreach('.') {|entry| puts entry}
+```
+
+```ruby
+Dir.mkdir('temp_direcotry')
+Dir.delete('temp_direcotry') 	# need permissions and has to be empty
+```

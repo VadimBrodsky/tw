@@ -1,0 +1,14 @@
+created: 20141105011859078
+modified: 20141105011920881
+tags: Ruby
+title: Methods: Argument Default Values
+type: text/vnd.tiddlywiki
+
+* Default behavior for the method, so it will not break if the argument is missing when the method is called.
+* Make the required arguments first in the argument list.
+
+```ruby
+def welcome(name="Friend")
+	puts "Hello #{name}"
+end
+```

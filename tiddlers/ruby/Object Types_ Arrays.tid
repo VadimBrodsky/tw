@@ -1,0 +1,24 @@
+created: 20141105005206054
+modified: 20141105005241705
+tags: Ruby
+title: Object Types: Arrays
+type: text/vnd.tiddlywiki
+
+* Array: an ordered, integer-indexed collection of objects.
+* Any king of objects can go in an array (strings, numbers, other arrays, mixed types etc.)
+* The square brackets for the array are optional.
+
+```ruby
+data_set = []
+data_set = ["a", "b", "c"]
+data_set[1] # => "b"
+data_set[0] # => "a"
+data_set[3] # => nil
+data_set[0] = d
+data_set  # => ["d", "b", "c"]
+```
+
+```ruby
+data_set << "e" # appends an item to the end of the array
+data_set.clear # clears out the array, same as data_set = []
+```

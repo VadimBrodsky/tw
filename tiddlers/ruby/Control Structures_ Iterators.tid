@@ -1,0 +1,49 @@
+created: 20141105010636816
+modified: 20141105010723601
+tags: Ruby
+title: Control Structures: Iterators
+type: text/vnd.tiddlywiki
+
+* Similar to loops.
+* Once for each item in a set of data.
+* The curly braces `{...}` are shorthand for `do` and `end`.
+* Control statements `break`, `next`, `redo` and `retry` work in iterators.
+* Integers / floats iterate with: `times`, `upto`, `downto`, `step`
+* Range iterate with: `each`, `step`
+* String iterate with: `each`, `each_line`, `each_byte`
+* Array iterate with: `each`, `each_index`, `each_with_index`
+* Hash iterate with: `each`, `each_key`, `each_value`, `each_pair`
+
+```ruby
+5.times do
+	puts "hello"
+end
+```
+
+```ruby
+1.upto(5) {puts "hello"}
+5.downto(1) {puts "hello"}
+(1..5).each {puts "hello"}
+```
+
+```ruby
+1.upto(5) do |i|   # i is the number of each iterator
+	puts "Hello " + i.to_s
+end
+
+# same as above
+1.upto(5) {|i| puts "Hello " + i.to_s}
+```
+
+```ruby
+fruits = ['banana', 'apple', 'pear']
+
+fruits.each do |fruit|
+	puts fruit.capitalize
+end
+
+# same as above
+for fruit in fruits
+	puts fruit.capitalize
+end
+```

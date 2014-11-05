@@ -1,0 +1,25 @@
+created: 20141105012255763
+modified: 20141105012313762
+tags: Ruby
+title: Classes: Reader / Writer Methods
+type: text/vnd.tiddlywiki
+
+* Same as getters / setters in other languages.
+* Give access control over the instance variables.
+* Ruby has syntactic sugar to make the reader and writer method more concise.
+
+```ruby
+class Animal
+	def noise=(noise) 		# same as above but shorter
+		@noise = noise
+	end
+
+	def noise 				# same as above but shorter
+		@noise
+	end
+end
+
+animal = Animal.new 		
+animal.noise = "Moo!" 		# like assigning a variable
+puts animal.noise
+```

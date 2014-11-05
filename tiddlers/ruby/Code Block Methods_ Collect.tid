@@ -1,0 +1,43 @@
+created: 20141105010939397
+modified: 20141105011004224
+tags: Ruby
+title: Code Block Methods: Collect
+type: text/vnd.tiddlywiki
+
+* Use either `collect` or `map`.
+* Works best with Arrays, Hashes and Ranges.
+* Applies the instructions of the code block to each value in the array.
+* Need to be explicit on the returns, otherwise it will return `nil`.
+* Number of items in == number of items out.
+* Always returns an Array.
+* Use `collect!` to save the effect on the original object.
+
+```ruby
+array = [1, 2, 3, 4, 5]
+array.collect {|i| i + 1} 	#=> [2, 3, 4, 5, 6]
+
+["apple", "banana", "orange"].map {|fruit| fruit.capitalize}
+#=> ["Apple", "Banana", "Orange"]
+```
+
+```ruby
+["apple", "banana", "orange"].map {|fruit| fruit.capitalize if fruit == 'banana'}
+#=> [nil, "Banana", nil]
+# Only returns the matched conditions.
+```
+
+```ruby
+["apple", "banana", "orange"].map do |fruit|
+	if fruit == 'banana'
+		fruit.capitalize
+	else
+		fruit
+	end
+end
+#=> ["apple", "Banana", "orange"]
+```
+
+```ruby
+hash = { "a" => 111, "b" => 222, "c" => 333 }
+hash.map {|k,v| k.capitalize} 	#=> ["A", "B", "C"]
+```

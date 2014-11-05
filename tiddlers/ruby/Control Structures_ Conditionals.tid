@@ -1,0 +1,45 @@
+created: 20141105010402381
+modified: 20141105010434080
+tags: Ruby
+title: Control Structures: Conditionals
+type: text/vnd.tiddlywiki
+
+If something true, do this.
+
+```ruby
+if boolean
+	...
+end
+```
+
+```ruby
+if boolean
+	...
+else
+	...
+end
+```
+
+```ruby
+if boolean
+	...
+elsif boolean
+	...
+else
+	...
+end
+```
+
+```ruby
+if x < 10
+	puts "Below 10"
+elsif x > 20
+	puts "Over 20"
+else
+	puts "10-20"
+end
+```
+
+```ruby
+puts "This is Vadim" if name == "Vadim"  # inline conditional
+```

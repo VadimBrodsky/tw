@@ -1,0 +1,11 @@
+created: 20141105010733446
+modified: 20141105010757810
+tags: Ruby
+title: Control Structures: Code Blocks
+type: text/vnd.tiddlywiki
+
+* Block of code that executes multiple times.
+* Usually between `do` and `end` or with the short form `{...}`
+* Can use the value of the iteration with the `|i|` notation.
+* Don't have access to block variables in the local scope.
+* Do have access to local variable in the block scope.

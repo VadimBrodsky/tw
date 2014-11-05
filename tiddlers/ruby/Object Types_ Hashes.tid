@@ -1,0 +1,10 @@
+created: 20141105005327624
+modified: 20141105005352938
+tags: Ruby
+title: Object Types: Hashes
+type: text/vnd.tiddlywiki
+
+* Hash: unordered, object-indexed collection of objects.
+* Stored as a key-value pair, unordered collection.
+* Indexed by a a key, not by a specific order.
+* Called a dictionary in other languages.

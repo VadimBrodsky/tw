@@ -1,0 +1,22 @@
+created: 20141105011714415
+modified: 20141105011730076
+tags: Ruby
+title: Methods: Defining Methods
+type: text/vnd.tiddlywiki
+
+Method names can have question marks `?` - convention for tests and booleans.
+
+```ruby
+def method_name
+	...
+end
+
+def add
+	puts 1 + 1
+end
+
+def over_five?
+	value = 3
+	puts value > 5 ? 'over 5' : 'not over 5'
+end
+```

@@ -1,0 +1,32 @@
+created: 20141105014343867
+modified: 20141105014520063
+tags: Ruby
+title: Working With Files: Examining File Details
+type: text/vnd.tiddlywiki
+
+* Class methods on the `File` class.
+* File instance use the `stat` object to access information.
+
+```ruby
+file = 'testfile.txt'
+File.exist?(file) 		# does it exist
+File.file?(file) 		# is it a file
+File.directory?(file) 	# is it a directory
+File.readable?(file) 	# readable permission
+File.writable?(file) 	# writable permission
+File.executable?(file) 	# executable permission
+File.size(file) 		# in bytes, corresponds to string length
+File.dirname(file) 		# folder name
+File.expand_path(file) 	# full path
+File.basename(file) 	# reverse of expand, file name
+File.extname(file) 		# extension of the file
+File.atime(file) 		# last accessed time - read or write
+File.mtime(file) 		# last modified time - write
+File.ctime(file) 		# last status change time, NOT created time
+```
+
+```ruby
+myfile.stat 			# returns a file stat object
+myfile.stat.size
+myfile.stat.readable?
+```

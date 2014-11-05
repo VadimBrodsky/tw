@@ -1,0 +1,25 @@
+created: 20141105014003224
+modified: 20141105014123851
+tags: Ruby
+title: Working With Files: File Pointer
+type: text/vnd.tiddlywiki
+
+* Similar to a file pointer in a text editor.
+* Overwrites text at a position.
+* Use it for both writing and reading.
+* The pointer position: `file.pos` start with `0`.
+
+```ruby
+file.pos          # current position of the pointer
+file.read(3)
+file.pos           #=> 3
+file.pos = 13      # move pointer to position 13
+file.eof?          # Boolean enf of file check
+file.rewind        # Go back to start, sams as assigning 0
+file.pos += 6      # Go forward 6
+file.pos += 100    # set the pointer beyond the end of the file
+```
+
+```ruby
+file.lineno        # how many times gets was called
+```

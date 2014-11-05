@@ -1,0 +1,17 @@
+created: 20141105012548983
+modified: 20141105012635529
+tags: Ruby
+title: Classes: Class Reader / Writer Method
+type: text/vnd.tiddlywiki
+
+Same as with instance variables, class variables (attributes) need setter and getter methods.
+
+```ruby
+def self.animals    # reader
+	@@animals
+end
+
+def self.animals=(array=[])    # writer
+	@@animals = array
+end
+```

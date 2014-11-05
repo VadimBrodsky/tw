@@ -1,0 +1,9 @@
+created: 20141105014201855
+modified: 20141105014242160
+tags: Ruby
+title: File Class
+type: text/vnd.tiddlywiki
+
+* Standard file class.
+* `rename`
+* `delete`, `unlink`

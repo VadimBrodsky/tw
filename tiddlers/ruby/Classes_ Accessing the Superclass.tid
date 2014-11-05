@@ -1,0 +1,21 @@
+created: 20141105012739450
+modified: 20141105012757450
+tags: Ruby
+title: Classes: Accessing the Superclass
+type: text/vnd.tiddlywiki
+
+* To change the behavior of a superclass' method without completely overriding it.
+* The keyword `super` is used for that.
+* It returns the result of the original method to where `super` is called.
+
+```ruby
+class Pig < Animal
+	def noise
+		parent_noise = super
+		return "Hello and also #{parent_noise}"
+	end
+end
+
+wilbur = Pig.new
+wilbur.make_noise
+```

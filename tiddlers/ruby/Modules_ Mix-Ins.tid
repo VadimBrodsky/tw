@@ -1,0 +1,54 @@
+created: 20141105012853176
+modified: 20141105013122197
+tags: Ruby
+title: Modules: Mix-Ins
+type: text/vnd.tiddlywiki
+
+* Ruby only allows to inherit from one superclass.
+* If additional functionality is needed, it can be placed into a module and mixed in.
+* Reuse the same code in multiple places, using the `include` statement.
+* Make sure the module definition comes before the class that it's being used in.
+* Can use Ruby's built-in modules like `enumerable`.
+
+```ruby
+module ContactInfo
+  attr_accessor :first_name, :last_name, :city, :state, :zip_code
+
+  def full_name
+    return @first_name + " " @last_name
+  end
+end
+
+class Person
+  include ContactInfo    # load the ContactInfo module
+end
+
+class Teacher
+  include ContactInfo
+  attr_accessor :lesson_plans
+end
+
+class Student < Person    # inherits the module behavior from Person
+  attr_accessor :books, :grades
+end
+```
+
+```ruby
+class ToDoList
+
+  include Enumerable    # load Ruby's Enumerable mixin
+
+  attr_accessor :items
+
+  def initialize
+    @items = []
+  end
+
+  def each
+    @items.each {|item| yield item}    # use the each functionality
+  end
+end
+
+list = ToDoList.new
+list.select {|i| i.length > 6}    # use the select method directly on the object
+```

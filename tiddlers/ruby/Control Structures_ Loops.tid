@@ -1,0 +1,54 @@
+created: 20141105010601606
+modified: 20141105010630517
+tags: Ruby
+title: Control Structures: Loops
+type: text/vnd.tiddlywiki
+
+* `break`: Terminate the whole loop.
+* `next`: Jump to the next loop.
+* `redo`: Redo this loop.
+* `retry`: Start the whole loop over.
+
+```ruby
+loop do
+	...
+end
+```
+
+```ruby
+x = 0
+loop do
+	x += 2
+	break if x >= 20
+	next if x == 6
+	puts x
+end 
+```
+
+```ruby
+while boolean  # has implied conditional
+	...
+end
+```
+
+```ruby
+until boolean  # while something is not true
+	...
+end
+```
+
+```ruby
+x = 0
+while x < 20
+	x += 2
+	puts x
+end
+```
+
+```ruby
+x = 0
+puts x += 2 while x < 100
+
+y = 3246
+puts y /= 2 until y <= 1
+```

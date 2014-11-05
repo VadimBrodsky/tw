@@ -1,0 +1,17 @@
+created: 20141105012646264
+modified: 20141105012706482
+tags: Ruby
+title: Classes: Inheritance
+type: text/vnd.tiddlywiki
+
+* Bestowal of methods and attributes of another class.
+* Superclass / parent => subclass / children.
+* In Ruby we can inherit from only 1 superclass at a time, there are no multiple inheritances.
+
+```ruby
+class Cow < Animal
+end
+
+betsy = Cow.new("Moo!")
+betst.class 		# Cow
+```

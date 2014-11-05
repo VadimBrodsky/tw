@@ -1,0 +1,44 @@
+created: 20141105010839423
+modified: 20141105010922504
+tags: Ruby
+title: Code Block Methods: Merge
+type: text/vnd.tiddlywiki
+
+* Used to merge Hashes together.
+* The values passed to the function take precedence over the  calling hash.
+* The code block can be supplied optionally, only called in case of a merge conflict.
+* The block is used for conflict resolution.
+* Use the `merge!` to save the changes of the operation.
+
+```ruby
+h1 = { "a" => 111, "b" => 222 }
+h2 = { "b" => 333, "c" => 444 }
+h1.merge(h2) 				#=> {"a"=>111, "b"=>333, "c"=>444}
+h2.merge(h1) 				#=> {"b"=>222, "c"=>444, "a"=>111}
+```
+
+```ruby
+h1.merge(h2) {|key, old, new| old * 2}  
+#=> {"a"=>111, "b"=>444, "c"=>444}
+```
+
+```ruby
+h1.merge(h2) do |key, old, new|
+	if old < new
+		old
+	else
+		new
+	end
+end
+#=> {"a"=>111, "b"=>222, "c"=>444}
+
+# Or using the shorthand
+h1.merge(h2) {|k,o,n| o < n ? o : n}
+#=> {"a"=>111, "b"=>222, "c"=>444}
+```
+
+```ruby
+h1.merge!(h2)
+h1
+#=> {"a"=>111, "b"=>333, "c"=>444}
+```

@@ -1,0 +1,9 @@
+created: 20141105003848483
+modified: 20141105003933391
+tags: Ruby
+title: Comments
+type: text/vnd.tiddlywiki
+
+Ruby comments start with the pound sign `#` (also called the “hash mark” or “octothorpe”).
+
+Comments extend to the end of the line.

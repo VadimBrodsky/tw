@@ -1,0 +1,17 @@
+created: 20141105011638215
+modified: 20141105011705750
+tags: Ruby
+title: Methods: Calling Methods
+type: text/vnd.tiddlywiki
+
+* Object method that are applied to an object use the `.` notation.
+* Object methods can be chained.
+* To call a stand-alone method just call it's name, like a variable.
+* Methods have to be defined before they are called.
+* Parentheses for method parameters are optional.
+* When hashes are the last argument in a function call, the curly braces are optional.
+
+```ruby
+"hello".reverse.capitalize
+method_name
+```

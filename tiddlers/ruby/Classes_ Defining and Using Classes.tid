@@ -1,0 +1,22 @@
+created: 20141105012133481
+modified: 20141105012145707
+tags: Ruby
+title: Classes: Defining and Using Classes
+type: text/vnd.tiddlywiki
+
+```ruby
+class NameOfClass
+	...
+end
+```
+
+```ruby
+class Animal
+	def make_noise
+		"Moo!"
+	end
+end
+
+animal = Animal.new 	#=> #<Animal:0x007f9e7d1a9dc0>
+animal.make_noise 		#=> "Moo!"
+```

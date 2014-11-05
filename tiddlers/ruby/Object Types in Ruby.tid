@@ -1,0 +1,9 @@
+created: 20141105004724776
+modified: 20141105004754934
+tags: Ruby
+title: Object Types in Ruby
+type: text/vnd.tiddlywiki
+
+* Ruby is an object-oriented programming language.
+* An object is the fundamental building block in Ruby.
+* Objects are instances of a class.

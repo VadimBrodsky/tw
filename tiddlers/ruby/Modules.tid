@@ -1,0 +1,9 @@
+created: 20141105012800504
+modified: 20141105012822671
+tags: Ruby
+title: Modules
+type: text/vnd.tiddlywiki
+
+* Are wrappers around Ruby code.
+* Modules can't be instantiated.
+* Modules are used in conjunction with classes.

@@ -1,0 +1,9 @@
+created: 20141105014541419
+modified: 20141105014606667
+tags: Ruby
+title: Ruby exit! Method
+type: text/vnd.tiddlywiki
+
+* Will stop the script and exit to the command line.
+* Stops right away.
+* `exit!`

@@ -1,0 +1,7 @@
+created: 20141105013208822
+modified: 20141105013303429
+tags: Ruby
+title: Working With Files
+type: text/vnd.tiddlywiki
+
+Ruby can work with files with the IO of the standard library.

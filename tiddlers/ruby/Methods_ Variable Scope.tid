@@ -1,0 +1,9 @@
+created: 20141105011749167
+modified: 20141105011810650
+tags: Ruby
+title: Methods: Variable Scope
+type: text/vnd.tiddlywiki
+
+* Local method variables have the scope local to the method only.
+* Method names and variable names can look the same, be careful.
+* Global `$variable`, class `@@variable` and instance `@variable` can span the scope of the method.

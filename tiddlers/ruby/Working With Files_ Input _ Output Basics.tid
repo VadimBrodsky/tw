@@ -1,0 +1,19 @@
+created: 20141105013310647
+modified: 20141105013327146
+tags: Ruby
+title: Working With Files: Input / Output Basics
+type: text/vnd.tiddlywiki
+
+* Input / Output of a ruby program.
+* The `gets` method receives input from the user.
+* Use `chomp` to remove the trailing `\n`.
+* Use `chop` to remove the last character.
+
+```ruby
+input = gets 		#=> "Hello.\n"
+input.chomp 		#=> "Hello."
+input.chop 			#=> "Hello"
+
+print input 		#=> "Hello"
+puts input 			#=> "Hello\n"
+```

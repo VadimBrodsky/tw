@@ -1,0 +1,21 @@
+created: 20141105013800030
+modified: 20141105013821363
+tags: Ruby
+title: Working With Files: Writing
+type: text/vnd.tiddlywiki
+
+* Before writing the data to the file, Ruby waits for the file to be closed first.
+* Write to the hard drive only once in batch.
+
+```ruby
+file = File.new('test_file.txt', 'w')
+file.puts "abcd"
+file.close
+```
+
+```ruby
+file.puts "abcd" 		# puts string with line break
+file.print "abcd" 		# puts string whiteout line break
+file.write "abcd" 		# like print but returns the number of characters
+file << "abcd" 			# like print but returns the object
+```

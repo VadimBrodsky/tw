@@ -1,0 +1,19 @@
+created: 20141105005822227
+modified: 20141105005846334
+tags: Ruby
+title: Object Types: Ranges
+type: text/vnd.tiddlywiki
+
+* Ranges: range on numbers, like an array of all the numbers 1..10
+* Inclusive range `1..10` == `1,2,3,4,5,6,7,8,9,10`
+* Exclusive range `1...10` == `1,2,3,4,5,6,7,8,9`
+
+```ruby
+x = 1..10
+y = 'a'..'m'
+x.class                #=> Range
+x.begin                #=> 1   // same as x.first
+x.end                  #=> 10  // same as x.last
+x.include(10)          #=> true
+[*x]                   #=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```

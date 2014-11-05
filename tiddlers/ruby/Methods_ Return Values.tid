@@ -1,0 +1,27 @@
+created: 20141105011929969
+modified: 20141105011954204
+tags: Ruby
+title: Methods: Return Values
+type: text/vnd.tiddlywiki
+
+* All methods have a return value.
+* Implicit return - the return value for the method is the last operation of the method.
+* Explicit return - exits the method and reruns the value using the `return` keyword.
+* Returns can work with `if` statements -- `return if x`.
+* Can only return 1 object from a method.
+
+```ruby
+def welcome(name="Friend")
+	return "Hello #{name}!"
+end
+```
+
+```ruby
+def add_and_subtract(n1=0, n2=0)
+	add = n1 + n2
+	sub = n1 - n2
+	return add, sub 	#=> This is an array, the brackets are optional
+end
+
+add, sub = add_and_subtract(8, 3)	#=> Double assignment to an array
+```

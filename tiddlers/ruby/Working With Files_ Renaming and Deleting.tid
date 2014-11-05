@@ -1,0 +1,7 @@
+created: 20141105014142499
+modified: 20141105014159864
+tags: Ruby
+title: Working With Files: Renaming and Deleting
+type: text/vnd.tiddlywiki
+
+Need read and write to the file, as well as write permissions for the directory.

@@ -1,0 +1,18 @@
+created: 20141105014615496
+modified: 20141105014629887
+tags: Ruby
+title: Left and Right Justify
+type: text/vnd.tiddlywiki
+
+* Add characters to a string until reaches a defined length.
+* Useful for command line output justification.
+
+```ruby
+"Hello".ljust(30, "#")
+#=> "Hello#########################"
+```
+
+```ruby
+"Hello".rjust(30, "#")
+#=> "#########################Hello"
+```

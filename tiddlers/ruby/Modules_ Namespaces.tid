@@ -1,0 +1,22 @@
+created: 20141105012826003
+modified: 20141105012847344
+tags: Ruby
+title: Modules: Namespaces
+type: text/vnd.tiddlywiki
+
+* Namespacing allows for class names that don't conflict.
+* Use a namespace wrapper and double colons `ModuleName::ClassName`.
+* Keep class name distinct from standard Ruby classes.
+* Disambiguating your own class definitions.
+* Ensure classes used in open source code won't conflict.
+
+```ruby
+module Romantic 		# Module wrapper
+	class Date
+		...
+	end
+end
+
+dinner = Romantic::Date.new 	# Module date
+dinner.date = Date.new 			# Ruby date
+```

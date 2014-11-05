@@ -1,0 +1,50 @@
+created: 20141105011020489
+modified: 20141105011158327
+tags: Ruby
+title: Code Block Methods: Sort
+type: text/vnd.tiddlywiki
+
+* Sort does a comparison using the `<=>` operator.
+* The comparison operator decides which direction the value goes.
+* If the operation is on a single property use `sort_by`.
+* To save the result use `sort!`.
+* Can sort Hashes as well as Arrays, but Ruby converts it to an Array.
+
+`value1 <=> value2`
+
+| !Comparison Result | !Meaning   | !Action     |
+|        -1          | Less than  | Moves left  |
+|         0          | Equal      | Stays       |
+|         1          | More than  | Moves right |
+
+```ruby
+array = [3 ,1, 5, 2, 4]
+array.sort { |v1,v2| v1 <=> v2 } 	# default sorting
+array.sort 							# same as above but shorter
+#=> [1, 2, 3, 4, 5]
+```
+
+```ruby
+array.sort { |v1,v2| v2 <=> v1 }
+array.sort.reverse
+#=> [5, 4, 3, 2, 1]
+```
+
+```ruby
+fruits = ["banana", "apple", "orange", "pear"]
+fruits.sort 	# alphabetical sort
+#=> ["apple", "banana", "orange", "pear"]
+
+fruits.sort {|fruit1,fruit2| fruit1.length <=> fruit2.length}
+#=> ["pear", "apple", "orange", "banana"]
+
+fruits.sort_by{|fruit| fruit.length} 	#shorthand version
+#=> ["pear", "apple", "orange", "banana"]
+```
+
+```ruby
+hash = { "a" => 555, "b" => 333, "c" => 222, "d" => 111 }
+hash.sort {|item1, item2| item1[1] <=> item2[1] }
+# sort by values of the hash
+#=> [["d", 111], ["c", 222], ["b", 333], ["a", 555]]
+```

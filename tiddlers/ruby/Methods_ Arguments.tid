@@ -1,0 +1,33 @@
+created: 20141105011814430
+modified: 20141105011843357
+tags: Ruby
+title: Methods: Arguments
+type: text/vnd.tiddlywiki
+
+* Comma separated list if values that are passed into the methods.
+* Values are passed into the method when it is called.
+* When multiple arguments are defined, their order is important.
+* The parentheses for the arguments are optional.
+* Methods with arguments typically use parentheses.
+* Methods without arguments typically do not use parentheses.
+
+```ruby
+def welcome(name)
+	puts "Hello #{name}"
+end
+
+welcome("Vadim")
+#=> Hello Vadim
+
+welcome "Vadim" 	# without parentheses
+#=> Hello Vadim
+```
+
+```ruby
+def add(n1, n2)
+	puts n1 + n2
+end
+
+add(5, 2)
+#=> 7
+```

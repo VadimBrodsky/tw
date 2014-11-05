@@ -1,0 +1,20 @@
+created: 20141105013358967
+modified: 20141105013442810
+tags: Ruby
+title: Working With Files: Cross Platform
+type: text/vnd.tiddlywiki
+
+* File path separators
+  ** Unix, Linux, Mac path separator: `/`
+  ** Windows path separator: `\`
+  ** The `File.join()` method avoids the OS differences.
+* File permissions
+  ** `chmod`: change permissions on unix.
+  ** `chown`: change owner on unix.
+
+```ruby
+File.join('path', 'to', 'folder', 'file.rb')
+
+# Starting with a blank '' will create a path
+File.join('', 'Users', 'vadim', 'Desktop', 'rube_files')
+```

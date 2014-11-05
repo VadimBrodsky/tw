@@ -1,0 +1,12 @@
+created: 20141105004902775
+modified: 20141105004943864
+tags: Ruby
+title: Variables: Scope Indicators
+type: text/vnd.tiddlywiki
+
+| !Scope   |  !Syntax     |
+| Global   | `$variable`  |
+| Class    | `@@variable` |
+| Instance | `@variable`  |
+| Local    | `variable`   |
+| Block    | `variable`   |

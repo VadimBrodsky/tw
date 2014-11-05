@@ -1,0 +1,23 @@
+created: 20141105004015247
+modified: 20141105004102708
+tags: Ruby
+title: Printing
+type: text/vnd.tiddlywiki
+
+* To print a string, the most commonly used Ruby function is `puts`.
+* The puts method operates as a side-effect: the expression `puts "foo"` prints the string to the screen and then returns `nil` is a special Ruby value for “nothing at all”.
+* Using puts automatically appends a newline character `\n` to the output.
+* The related `print` method does not append a newline character.
+* The `inspect` method can be used to return a string literal representation of the object it's called on.
+* There is a shorthand for `puts object.inspect` by using `p object`.
+
+
+```ruby
+puts "hello"
+print "hello"
+```
+
+```ruby
+puts :name.inspect		# puts a literal object
+p :name					# shorthand
+```
