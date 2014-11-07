@@ -207,6 +207,8 @@ Error message and password prompt
 
 <li>Bundler</li>
 
+<li>Changing the Version of Rails in an Application</li>
+
 <li>Checkout a Remote Branch Locally</li>
 
 <li>Checkout in Git</li>
@@ -451,7 +453,7 @@ Error message and password prompt
 
 <li>Setting SublimeText Command in Terminal</li>
 
-<li>Simple, Match Route</li>
+<li>Simple Route</li>
 
 <li>SublimeText</li>
 
@@ -7517,7 +7519,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="GettingStarted Index" title="$:/StoryList" revision="1" bag="default">
+<div list="GettingStarted Index" title="$:/StoryList" revision="3" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -7927,6 +7929,20 @@ foobar.js.erb.coffee -- run through CoffeeScript and ERb
 bundle install
 bundle install --without production
 bundle update rails
+```</pre>
+</div>
+<div created="20141107113834354" modified="20141107114205467" tags="Rails" title="Changing the Version of Rails in an Application" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>To change the version of rails:
+
+* Generate a new app with `new`.
+* Change the Rails gem version in the `Gemfile`.
+* Run `rake rails:update`.
+* Overwrite the conflicting files.
+
+```bash
+rails new my_app
+bundle install
+rake rails:update
 ```</pre>
 </div>
 <div created="20141104172002663" modified="20141104172019414" tags="Git" title="Checkout a Remote Branch Locally" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -8630,10 +8646,11 @@ x || = y    # this is the shorthand for above
 git checkout -b branch-name
 ```</pre>
 </div>
-<div created="20141105112612758" modified="20141105112705080" tags="Rails" title="Creating Rails Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105112612758" modified="20141107111447450" tags="Rails" title="Creating Rails Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Navigate to the desired directory.
 * Run the `rails new project_name` command.
 * Can specify the database requirements with the `-d` flag.
+* The default database is SQLite 3.
 
 ```bash
 rails new hello_app
@@ -8671,10 +8688,12 @@ git push --tags &lt;tagname&gt;
 bundle exec rake db:migrate
 ```</pre>
 </div>
-<div created="20141105114954273" modified="20141105115019547" tags="Rails Rails-Routes" title="Default Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105114954273" modified="20141107120644512" tags="Rails Rails-Routes" title="Default Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* More generic routing rule.
+* Matches to contollers, actions and ids - `GET /students/edit/52`
 * Uses a Regex match function.
 * Can also pass a format for file type (json, xml etc.)
+* No longer considered a best practice.
 
 ```ruby
 :controller/:action/:id
@@ -9839,14 +9858,14 @@ rails generate controller Users new --no-test-framework
 rails generate model User name:string email:string
 ```</pre>
 </div>
-<div created="20141105114902210" modified="20141105114921128" tags="Rails Rails-Routes" title="Rails Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105114902210" modified="20141107120856826" tags="Rails Rails-Routes" title="Rails Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rails Routing =&gt; Controller =&gt; Model =&gt; Database =&gt; Controller =&gt; View
 * To see all of the active routes in the app use `rake routes` command
 * Routes are processed top-top-bottom in the `routes.rb` file.
 * Basic route types:
-  ** Simple route (match route)
-  ** Default route
-  ** Root route
+  ** [[Simple Route]] (match route)
+  ** [[Default Route]]
+  ** [[Root Route]]
   
 ```bash
 rake routes
@@ -9984,18 +10003,21 @@ rake db:setup
 git config --global core.editor &quot;subl -w&quot;
 ```</pre>
 </div>
-<div created="20141105114930302" modified="20141105114946371" tags="Rails Rails-Routes" title="Simple, Match Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>* Matching the string and sends it to the controller and action via get.
+<div created="20141105114930302" modified="20141107120939740" tags="Rails Rails-Routes" title="Simple Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Also called the //Match Route//.
+* Matching the string and sends it to the controller and action via get.
 * Not very flexible.
 * This also creates a named routes for use in controllers and views: `about_path` and `about_url`.
   * For most app link use `path`.
   * For redirects use `url`.
 
 ```ruby
+# short form
 get &quot;demo/index&quot;
 ```
 
 ```ruby
+# long form
 match &quot;demo/index&quot;, :to =&gt; &quot;demo#index&quot;, :via =&gt; :get
 match '/about', to: 'static_pages#about', via : 'get'
 ```</pre>
