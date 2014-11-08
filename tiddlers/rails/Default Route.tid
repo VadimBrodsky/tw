@@ -1,12 +1,14 @@
 created: 20141105114954273
-modified: 20141105115019547
+modified: 20141107120644512
 tags: Rails Rails-Routes
 title: Default Route
 type: text/vnd.tiddlywiki
 
 * More generic routing rule.
+* Matches to contollers, actions and ids - `GET /students/edit/52`
 * Uses a Regex match function.
 * Can also pass a format for file type (json, xml etc.)
+* No longer considered a best practice.
 
 ```ruby
 :controller/:action/:id

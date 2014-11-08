@@ -1,5 +1,5 @@
 created: 20141105114902210
-modified: 20141105114921128
+modified: 20141107120856826
 tags: Rails Rails-Routes
 title: Rails Routes
 type: text/vnd.tiddlywiki
@@ -8,9 +8,9 @@ type: text/vnd.tiddlywiki
 * To see all of the active routes in the app use `rake routes` command
 * Routes are processed top-top-bottom in the `routes.rb` file.
 * Basic route types:
-  ** Simple route (match route)
-  ** Default route
-  ** Root route
+  ** [[Simple Route]] (match route)
+  ** [[Default Route]]
+  ** [[Root Route]]
   
 ```bash
 rake routes
