@@ -159,8 +159,6 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/tab/sidebar--1835078512</li>
-
 <li>$:/status/IsLoggedIn</li>
 
 <li>$:/status/UserName</li>
@@ -168,6 +166,10 @@ Error message and password prompt
 <li>$:/StoryList</li>
 
 <li>$:/temp/info-plugin</li>
+
+<li>$:/temp/NewTagName</li>
+
+<li>$:/temp/search</li>
 
 <li>$:/theme</li>
 
@@ -208,6 +210,8 @@ Error message and password prompt
 <li>Asset_Pipeline</li>
 
 <li>Bundler</li>
+
+<li>Changing the Version of Rails in an Application</li>
 
 <li>Checkout a Remote Branch Locally</li>
 
@@ -270,6 +274,10 @@ Error message and password prompt
 <li>Controller Redirecting Actions</li>
 
 <li>Create a Branch</li>
+
+<li>Create a Database in MySQL</li>
+
+<li>Creating a New MySQL User</li>
 
 <li>Creating Rails Project</li>
 
@@ -449,6 +457,8 @@ Error message and password prompt
 
 <li>Rails Controllers</li>
 
+<li>Rails Environments</li>
+
 <li>Rails Generate</li>
 
 <li>Rails Models</li>
@@ -466,6 +476,8 @@ Error message and password prompt
 <li>Rails-AssetPipeline</li>
 
 <li>Rails-Routes</li>
+
+<li>Rake</li>
 
 <li>Red, Green, Refactor</li>
 
@@ -493,7 +505,7 @@ Error message and password prompt
 
 <li>Setting SublimeText Command in Terminal</li>
 
-<li>Simple, Match Route</li>
+<li>Simple Route</li>
 
 <li>SublimeText</li>
 
@@ -527,6 +539,8 @@ Error message and password prompt
 
 <li>View All Branches in Git Repo</li>
 
+<li>Viewing the Database Schema</li>
+
 <li>Working With Files</li>
 
 <li>Working With Files: Accessing Files</li>
@@ -552,6 +566,8 @@ Error message and password prompt
 <li>Working With Files: Writing</li>
 
 <li>Writing the Test</li>
+
+<li>YAML</li>
 
 </ul>
 </p>
@@ -7557,16 +7573,13 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div created="20141104134936346" modified="20141104135010837" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>tw</pre>
 </div>
-<div modified="20141108190413596" title="$:/state/tab/sidebar--1835078512" revision="2" bag="default">
-<pre>$:/core/ui/SideBar/Open</pre>
-</div>
 <div title="$:/status/IsLoggedIn" revision="2" bag="default">
 <pre>yes</pre>
 </div>
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="GettingStarted Index" title="$:/StoryList" revision="77" bag="default">
+<div list="GettingStarted Index" title="$:/StoryList" revision="36" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -7582,6 +7595,12 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
         }
     }
 }</pre>
+</div>
+<div created="20141108211809137" modified="20141108212607220" title="$:/temp/NewTagName" revision="30" bag="default">
+<pre></pre>
+</div>
+<div created="20141108211750506" modified="20141108213329164" title="$:/temp/search" revision="13" bag="default">
+<pre></pre>
 </div>
 <div created="20141104173510177" modified="20141104173509021" title="$:/theme" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>$:/themes/tiddlywiki/vanilla</pre>
@@ -7976,6 +7995,20 @@ foobar.js.erb.coffee -- run through CoffeeScript and ERb
 bundle install
 bundle install --without production
 bundle update rails
+```</pre>
+</div>
+<div created="20141107113834354" modified="20141107114205467" tags="Rails" title="Changing the Version of Rails in an Application" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>To change the version of rails:
+
+* Generate a new app with `new`.
+* Change the Rails gem version in the `Gemfile`.
+* Run `rake rails:update`.
+* Overwrite the conflicting files.
+
+```bash
+rails new my_app
+bundle install
+rake rails:update
 ```</pre>
 </div>
 <div created="20141104172002663" modified="20141104172019414" tags="Git" title="Checkout a Remote Branch Locally" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -8720,10 +8753,36 @@ This is done via the [[redirect_to action]]:
 git checkout -b branch-name
 ```</pre>
 </div>
-<div created="20141105112612758" modified="20141105112705080" tags="Rails" title="Creating Rails Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141108210551551" modified="20141108210737047" title="Create a Database in MySQL" revision="2" bag="default">
+<pre>4 basic database commands:
+
+* `SHOW DATABASES;`
+* `CREATE DATABASE db_name;`
+* `USE db_name;`
+* `DROP DATABASE db_name;`</pre>
+</div>
+<div created="20141108210921999" modified="20141108211312756" title="Creating a New MySQL User" revision="4" bag="default">
+<pre>It's a bad practice to use the root database user for the applicaiton. Create an app user name instead.
+
+This will create the user and will grant privileges.
+
+```SQL
+GRANT ALL PRIVILEGES ON db_name.*
+TO 'username'@'localhodt'
+IDENTIFIED BY 'password';
+```
+
+To verify:
+
+```sql
+SHOW GRANTS FOR 'username'@'localhost';
+```</pre>
+</div>
+<div created="20141105112612758" modified="20141107111447450" tags="Rails" title="Creating Rails Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Navigate to the desired directory.
 * Run the `rails new project_name` command.
 * Can specify the database requirements with the `-d` flag.
+* The default database is SQLite 3.
 
 ```bash
 rails new hello_app
@@ -8761,17 +8820,17 @@ git push --tags &lt;tagname&gt;
 bundle exec rake db:migrate
 ```</pre>
 </div>
-<div created="20141108184722052" modified="20141108185254790" title="DB Terms: Column" revision="1" bag="default">
+<div created="20141108184722052" modified="20141108185254790" title="DB Terms: Column" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* A set of data of a single simple type
 * In Rails an attribute of a single mode.
   ** Example: `first_name`, `last_name`, `email`, `password`.
 * Columns have types: strings, integetes, etc.</pre>
 </div>
-<div created="20141108185637727" modified="20141108190336687" title="DB Terms: CRUD" revision="1" bag="default">
+<div created="20141108185637727" modified="20141108190336687" title="DB Terms: CRUD" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Acronym of Create, Read, Update and Delete.
 * The 4 main ways to interact with the [[database|DB Terms: Database]].</pre>
 </div>
-<div created="20141108184306396" modified="20141108190329139" title="DB Terms: Database" revision="2" bag="default">
+<div created="20141108184306396" modified="20141108190329139" title="DB Terms: Database" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Set of tables - collection of database tables.
 * In Rails 1 database is usually 1 database.
   ** Example DB name: `simple_cms_development`
@@ -8788,12 +8847,12 @@ bundle exec rake db:migrate
 * [[DB Terms: Schema]]
 * [[DB Terms: CRUD]]</pre>
 </div>
-<div created="20141108185050935" modified="20141108185953545" title="DB Terms: Field" revision="2" bag="default">
+<div created="20141108185050935" modified="20141108185953545" title="DB Terms: Field" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* An intersection of a [[column|DB Terms: Column]] and a [[row|DB Terms: Row]].
 * Has a single value.
   ** Example: &quot;John&quot;</pre>
 </div>
-<div created="20141108185308089" modified="20141108190151621" title="DB Terms: Foreign Key" revision="5" bag="default">
+<div created="20141108185308089" modified="20141108190151621" title="DB Terms: Foreign Key" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* A table column whose values reference [[rows|DB Terms: Row]] in another table.
 * Relate rows in one table to another through this reference.
 * The foundation of relational [[databases|DB Terms: Database]].
@@ -8801,31 +8860,33 @@ bundle exec rake db:migrate
 * They are singular as per Rails convention.
 * Always put [[indexes|DB Terms: Index]] on foreign keys.</pre>
 </div>
-<div created="20141108185138295" modified="20141108185240334" title="DB Terms: Index" revision="1" bag="default">
+<div created="20141108185138295" modified="20141108185240334" title="DB Terms: Index" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Data structure on a table that increases the look-up speed.
 * Like an Index on a back of a book.</pre>
 </div>
-<div created="20141108184922156" modified="20141108185250121" title="DB Terms: Row" revision="1" bag="default">
+<div created="20141108184922156" modified="20141108185250121" title="DB Terms: Row" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rows are the data, each row equals to an object or an instance of a model.
 * Single record of data
   ** Example: &quot;John, &quot;Doe&quot;, &quot;jd@example.com&quot;</pre>
 </div>
-<div created="20141108185526278" modified="20141108190122635" title="DB Terms: Schema" revision="5" bag="default">
+<div created="20141108185526278" modified="20141108190122635" title="DB Terms: Schema" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Is the structural definition of a database.
 * Defines the [[tables|DB Terms: Table]], [[columns|DB Terms: Column]], [[indexes|DB Terms: Index]] of a [[database|DB Terms: Database]].
 * Importing a schema creates a complete database.</pre>
 </div>
-<div created="20141108184540893" modified="20141108185259596" title="DB Terms: Table" revision="1" bag="default">
+<div created="20141108184540893" modified="20141108185259596" title="DB Terms: Table" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Set of columns and rows.
 * In Rails 1 table = 1 model.
 * Represent a single concept (a noun).
   ** Examples: products, customers, orders
 * Relationships are defined with tables.</pre>
 </div>
-<div created="20141105114954273" modified="20141105115019547" tags="Rails Rails-Routes" title="Default Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105114954273" modified="20141107120644512" tags="Rails Rails-Routes" title="Default Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* More generic routing rule.
+* Matches to contollers, actions and ids - `GET /students/edit/52`
 * Uses a Regex match function.
 * Can also pass a format for file type (json, xml etc.)
+* No longer considered a best practice.
 
 ```ruby
 :controller/:action/:id
@@ -10058,6 +10119,13 @@ def show
 end
 ```</pre>
 </div>
+<div created="20141108211801112" modified="20141108212039522" tags="Rails" title="Rails Environments" revision="1" bag="default">
+<pre>* Development
+* Production
+* Test
+
+Environments are set in `\config\environments\`, additional environments can be added here.</pre>
+</div>
 <div created="20141105112904933" modified="20141105112938507" tags="Rails" title="Rails Generate" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rails `generate` command helps to create many things.
 * To list all of the thing that rails can generate, run `rails generate`
@@ -10092,14 +10160,14 @@ rails generate model User name:string email:string
 
 The `id` is special because is is part of the [[Default Route]] and positioned on the right side of the `?`.</pre>
 </div>
-<div created="20141105114902210" modified="20141105114921128" tags="Rails Rails-Routes" title="Rails Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105114902210" modified="20141107120856826" tags="Rails Rails-Routes" title="Rails Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rails Routing =&gt; Controller =&gt; Model =&gt; Database =&gt; Controller =&gt; View
 * To see all of the active routes in the app use `rake routes` command
 * Routes are processed top-top-bottom in the `routes.rb` file.
 * Basic route types:
-  ** Simple route (match route)
-  ** Default route
-  ** Root route
+  ** [[Simple Route]] (match route)
+  ** [[Default Route]]
+  ** [[Root Route]]
   
 ```bash
 rake routes
@@ -10124,6 +10192,28 @@ rails generate scaffold User name:string email:string
 </div>
 <div color="#942192" created="20141105114641356" modified="20141105114641356" title="Rails-Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20141108212559067" modified="20141108213115256" tags="Rails Rails-rake" title="Rake" revision="4" bag="default">
+<pre>* Rake is a simple Ruby helper program.
+* Performs tasks by running scripts.
+* Similar  to Unix's make program.
+
+```base
+rake command
+```
+
+To get a list of all the available Rake commands run:
+
+```bash
+rake -T
+rake -T db # only the database tasks
+```
+
+Rake can also accept environment variables:
+
+```bash
+rake db:schema:dump RAILS_ENV=production
+```</pre>
 </div>
 <div created="20141105113431225" modified="20141105113446520" tags="Rails TDD" title="Red, Green, Refactor" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* First write a failing test, represented in many testing tools by the color red.
@@ -10262,18 +10352,21 @@ rake db:setup
 git config --global core.editor &quot;subl -w&quot;
 ```</pre>
 </div>
-<div created="20141105114930302" modified="20141105114946371" tags="Rails Rails-Routes" title="Simple, Match Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>* Matching the string and sends it to the controller and action via get.
+<div created="20141105114930302" modified="20141107120939740" tags="Rails Rails-Routes" title="Simple Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Also called the //Match Route//.
+* Matching the string and sends it to the controller and action via get.
 * Not very flexible.
 * This also creates a named routes for use in controllers and views: `about_path` and `about_url`.
   * For most app link use `path`.
   * For redirects use `url`.
 
 ```ruby
+# short form
 get &quot;demo/index&quot;
 ```
 
 ```ruby
+# long form
 match &quot;demo/index&quot;, :to =&gt; &quot;demo#index&quot;, :via =&gt; :get
 match '/about', to: 'static_pages#about', via : 'get'
 ```</pre>
@@ -10428,6 +10521,15 @@ validates :email, presence: true, uniqueness: { case_sensitive: false}
 git branch
 git branch -a
 ```</pre>
+</div>
+<div created="20141108212347085" modified="20141108212546126" tags="Rails Rails-rake" title="Viewing the Database Schema" revision="2" bag="default">
+<pre>To see the database schema use the `rake` command:
+
+```bash
+rake db:schema:dump
+```
+
+If the database connection is not defined the above command will fail.</pre>
 </div>
 <div created="20141105013208822" modified="20141105013303429" tags="Ruby" title="Working With Files" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Ruby can work with files with the IO of the standard library.</pre>
@@ -10667,6 +10769,11 @@ describe &quot;Static pages&quot; do
   end
 end
 ```</pre>
+</div>
+<div created="20141108211441986" modified="20141108212344204" tags="Rails" title="YAML" revision="2" bag="default">
+<pre>* YAML Ain't Markup Language
+* YAML is a way of structuring a simple text file.
+* Suited for serialized data such as configurations.</pre>
 </div>
 
 </div>
