@@ -1,5 +1,5 @@
 created: 20141105004902775
-modified: 20141105004943864
+modified: 20141108165330870
 tags: Ruby
 title: Variables: Scope Indicators
 type: text/vnd.tiddlywiki
@@ -7,6 +7,6 @@ type: text/vnd.tiddlywiki
 | !Scope   |  !Syntax     |
 | Global   | `$variable`  |
 | Class    | `@@variable` |
-| Instance | `@variable`  |
+| [[Instance|Instance Variables]] | `@variable`  |
 | Local    | `variable`   |
 | Block    | `variable`   |

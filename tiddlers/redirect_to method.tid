@@ -1,0 +1,29 @@
+created: 20141108162322286
+modified: 20141108171029575
+tags: Rails Rails-Controllers
+title: redirect_to method
+type: text/vnd.tiddlywiki
+
+A controller method that is used to redirect pages:
+
+```ruby
+def other_hello
+  redirect_to(:controller => 'demo', :action => 'index')
+end
+```
+
+A Rails default debaviour is to assume that the action will be in the same controller if the `:controller` portion is unspecified.
+
+```ruby
+def other_hello
+  redirect_to(:action => 'index')
+end
+```
+
+Can also work with urls:
+
+```ruby
+def other_hello
+  redirect_to("http://www.example.com")
+end
+```

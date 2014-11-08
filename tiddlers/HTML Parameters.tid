@@ -1,0 +1,11 @@
+created: 20141108173703238
+modified: 20141108173714878
+title: HTML Parameters
+type: text/vnd.tiddlywiki
+
+* HTML link parameters is everything to the right of the `?` in URL address.
+* Parameters are key-value pairs separated by `&` ampresands.
+
+```
+/demo/hello/1?page=3&name=vadim
+```

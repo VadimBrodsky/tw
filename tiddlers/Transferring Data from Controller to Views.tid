@@ -1,0 +1,25 @@
+created: 20141108165501882
+modified: 20141108170659778
+tags: Rails Rails-Controllers Rails-Views
+title: Transferring Data from Controller to Views
+type: text/vnd.tiddlywiki
+
+* The controller is an object in Ruby, Rails creates an instance of the Controller class and assignes instance variables to it.
+* Before Rails renders a template, it gathers all of the controller's [[Instance Variables]] and makes them avaliable to the template.
+* Data that goes from the controller to the view is 1 way only.
+
+If you set an instance variable in the controller, inside that action, then it will be available in the view that gets rendered.
+
+```ruby
+#demo_controller.rb
+def hello
+  @array = [1,2,3,4,5]
+end
+```
+
+```ruby
+#hello.html.erb
+<% @array.each do |n| %>
+  <%= n %><br>
+<% end %>
+```

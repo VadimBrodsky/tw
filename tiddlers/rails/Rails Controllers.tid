@@ -1,8 +1,15 @@
 created: 20141105115505733
-modified: 20141105115532605
+modified: 20141108155413274
 tags: Rails Rails-Controllers
 title: Rails Controllers
 type: text/vnd.tiddlywiki
+
+When the action is empty Rails will render the corresponding view by default. This action can by specified explicitly by the [[Controller Action to Render Template]]
+
+```ruby
+def hello
+end
+```
 
 ```ruby
 def show

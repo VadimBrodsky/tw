@@ -1,0 +1,11 @@
+created: 20141108173409404
+modified: 20141108173452563
+title: HashWithIndifferentAccess
+type: text/vnd.tiddlywiki
+
+Allows to specify keys with either symobols or just strings.
+
+```ruby
+params[:id]
+params['id']
+```

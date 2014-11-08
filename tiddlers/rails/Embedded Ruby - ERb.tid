@@ -1,15 +1,22 @@
 created: 20141105113634451
-modified: 20141105113706929
+modified: 20141108164125783
 tags: Rails ERb
 title: Embedded Ruby - ERb
 type: text/vnd.tiddlywiki
 
-* ERb is the primary template system in Rails.
-* The `<% ... %>` tag executes the code inside.
-* The `<%= ... %>` tag executes and inserts the result into the template.
+{{ ERb Template Tags }}
 
 ```erb
-<body>
-<%= yield %>
-</body>
+<%= 1 + 1 %>
+```
+
+```erb
+<% target = 'world' %>
+<%= "Hello #{target}" %>
+```
+
+```erb
+<% 3.times do %>
+  <%= "zzz" %>
+<% end %>
 ```

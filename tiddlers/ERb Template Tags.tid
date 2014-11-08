@@ -1,0 +1,10 @@
+created: 20141108163056804
+modified: 20141108163924940
+tags: ERb Rails
+title: ERb Template Tags
+type: text/vnd.tiddlywiki
+
+To embed Ruby code in an ERb template use the ERb tags:
+
+* `<% code %>` - executes the Ruby code
+* `<%= code %>` - executes and outputs the Ruby code

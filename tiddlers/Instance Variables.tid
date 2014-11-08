@@ -1,0 +1,10 @@
+created: 20141108165127383
+modified: 20141108170054556
+tags: Ruby
+title: Instance Variables
+type: text/vnd.tiddlywiki
+
+* Used within classes, for presistent information.
+* Instance variable denoted `@instance_variable`.
+* Used primarily with [[Class Attribute Methods|Classes: Attribute Methods]].
+* Rails uses Instance Variable to [[transfer data from controller to views|Transferring Data from Controller to Views]]

@@ -1,6 +1,18 @@
 color: #0433ff
 created: 20141105114624690
-modified: 20141105114627091
+modified: 20141108163426349
 title: ERb
 type: text/vnd.tiddlywiki
 
+ERb stands for Embedded Ruby. It is a templating system to embed Ruby code in the template files.
+
+`hello.html.erb`
+
+* Template name: `hello`
+* Process with: `ERb`
+* Output format: `HTML`
+
+ERb can also output to XML, JSON or JavaScript.
+
+!! ERb Notes:
+<$list filter="[tag[ERb]!has[draft.of]]">
