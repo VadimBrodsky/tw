@@ -1,0 +1,11 @@
+created: 20141108211801112
+modified: 20141108212039522
+tags: Rails
+title: Rails Environments
+type: text/vnd.tiddlywiki
+
+* Development
+* Production
+* Test
+
+Environments are set in `\config\environments\`, additional environments can be added here.

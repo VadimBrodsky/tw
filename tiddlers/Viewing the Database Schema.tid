@@ -1,0 +1,13 @@
+created: 20141108212347085
+modified: 20141108212546126
+tags: Rails Rails-rake
+title: Viewing the Database Schema
+type: text/vnd.tiddlywiki
+
+To see the database schema use the `rake` command:
+
+```bash
+rake db:schema:dump
+```
+
+If the database connection is not defined the above command will fail.

@@ -1,0 +1,9 @@
+created: 20141108211441986
+modified: 20141108212344204
+tags: Rails
+title: YAML
+type: text/vnd.tiddlywiki
+
+* YAML Ain't Markup Language
+* YAML is a way of structuring a simple text file.
+* Suited for serialized data such as configurations.

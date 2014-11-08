@@ -1,0 +1,11 @@
+created: 20141108210551551
+modified: 20141108210737047
+title: Create a Database in MySQL
+type: text/vnd.tiddlywiki
+
+4 basic database commands:
+
+* `SHOW DATABASES;`
+* `CREATE DATABASE db_name;`
+* `USE db_name;`
+* `DROP DATABASE db_name;`
