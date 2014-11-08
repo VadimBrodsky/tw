@@ -159,6 +159,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/tab/sidebar--1835078512</li>
+
 <li>$:/status/IsLoggedIn</li>
 
 <li>$:/status/UserName</li>
@@ -274,6 +276,24 @@ Error message and password prompt
 <li>Creating Tags in Git</li>
 
 <li>Database Migration</li>
+
+<li>DB Terms: Column</li>
+
+<li>DB Terms: CRUD</li>
+
+<li>DB Terms: Database</li>
+
+<li>DB Terms: Field</li>
+
+<li>DB Terms: Foreign Key</li>
+
+<li>DB Terms: Index</li>
+
+<li>DB Terms: Row</li>
+
+<li>DB Terms: Schema</li>
+
+<li>DB Terms: Table</li>
 
 <li>Default Route</li>
 
@@ -7537,13 +7557,16 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div created="20141104134936346" modified="20141104135010837" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>tw</pre>
 </div>
+<div modified="20141108190413596" title="$:/state/tab/sidebar--1835078512" revision="2" bag="default">
+<pre>$:/core/ui/SideBar/Open</pre>
+</div>
 <div title="$:/status/IsLoggedIn" revision="2" bag="default">
 <pre>yes</pre>
 </div>
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="GettingStarted Index" title="$:/StoryList" revision="3" bag="default">
+<div list="GettingStarted Index" title="$:/StoryList" revision="77" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -8737,6 +8760,67 @@ git push --tags &lt;tagname&gt;
 ```bash
 bundle exec rake db:migrate
 ```</pre>
+</div>
+<div created="20141108184722052" modified="20141108185254790" title="DB Terms: Column" revision="1" bag="default">
+<pre>* A set of data of a single simple type
+* In Rails an attribute of a single mode.
+  ** Example: `first_name`, `last_name`, `email`, `password`.
+* Columns have types: strings, integetes, etc.</pre>
+</div>
+<div created="20141108185637727" modified="20141108190336687" title="DB Terms: CRUD" revision="1" bag="default">
+<pre>* Acronym of Create, Read, Update and Delete.
+* The 4 main ways to interact with the [[database|DB Terms: Database]].</pre>
+</div>
+<div created="20141108184306396" modified="20141108190329139" title="DB Terms: Database" revision="2" bag="default">
+<pre>* Set of tables - collection of database tables.
+* In Rails 1 database is usually 1 database.
+  ** Example DB name: `simple_cms_development`
+* Access permissions are granted at the database level.
+* The application decides whether a user can access certain tables.
+
+!! Databases Consist of:
+* [[DB Terms: Database]]
+* [[DB Terms: Column]]
+* [[DB Terms: Row]]
+* [[DB Terms: Field]]
+* [[DB Terms: Index]]
+* [[DB Terms: Foreign Key]]
+* [[DB Terms: Schema]]
+* [[DB Terms: CRUD]]</pre>
+</div>
+<div created="20141108185050935" modified="20141108185953545" title="DB Terms: Field" revision="2" bag="default">
+<pre>* An intersection of a [[column|DB Terms: Column]] and a [[row|DB Terms: Row]].
+* Has a single value.
+  ** Example: &quot;John&quot;</pre>
+</div>
+<div created="20141108185308089" modified="20141108190151621" title="DB Terms: Foreign Key" revision="5" bag="default">
+<pre>* A table column whose values reference [[rows|DB Terms: Row]] in another table.
+* Relate rows in one table to another through this reference.
+* The foundation of relational [[databases|DB Terms: Database]].
+  ** Example: `subject_id`
+* They are singular as per Rails convention.
+* Always put [[indexes|DB Terms: Index]] on foreign keys.</pre>
+</div>
+<div created="20141108185138295" modified="20141108185240334" title="DB Terms: Index" revision="1" bag="default">
+<pre>* Data structure on a table that increases the look-up speed.
+* Like an Index on a back of a book.</pre>
+</div>
+<div created="20141108184922156" modified="20141108185250121" title="DB Terms: Row" revision="1" bag="default">
+<pre>* Rows are the data, each row equals to an object or an instance of a model.
+* Single record of data
+  ** Example: &quot;John, &quot;Doe&quot;, &quot;jd@example.com&quot;</pre>
+</div>
+<div created="20141108185526278" modified="20141108190122635" title="DB Terms: Schema" revision="5" bag="default">
+<pre>* Is the structural definition of a database.
+* Defines the [[tables|DB Terms: Table]], [[columns|DB Terms: Column]], [[indexes|DB Terms: Index]] of a [[database|DB Terms: Database]].
+* Importing a schema creates a complete database.</pre>
+</div>
+<div created="20141108184540893" modified="20141108185259596" title="DB Terms: Table" revision="1" bag="default">
+<pre>* Set of columns and rows.
+* In Rails 1 table = 1 model.
+* Represent a single concept (a noun).
+  ** Examples: products, customers, orders
+* Relationships are defined with tables.</pre>
 </div>
 <div created="20141105114954273" modified="20141105115019547" tags="Rails Rails-Routes" title="Default Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* More generic routing rule.
