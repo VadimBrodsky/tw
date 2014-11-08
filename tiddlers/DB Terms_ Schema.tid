@@ -1,0 +1,8 @@
+created: 20141108185526278
+modified: 20141108190122635
+title: DB Terms: Schema
+type: text/vnd.tiddlywiki
+
+* Is the structural definition of a database.
+* Defines the [[tables|DB Terms: Table]], [[columns|DB Terms: Column]], [[indexes|DB Terms: Index]] of a [[database|DB Terms: Database]].
+* Importing a schema creates a complete database.

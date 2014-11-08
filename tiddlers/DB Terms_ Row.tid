@@ -1,0 +1,8 @@
+created: 20141108184922156
+modified: 20141108185250121
+title: DB Terms: Row
+type: text/vnd.tiddlywiki
+
+* Rows are the data, each row equals to an object or an instance of a model.
+* Single record of data
+  ** Example: "John, "Doe", "jd@example.com"

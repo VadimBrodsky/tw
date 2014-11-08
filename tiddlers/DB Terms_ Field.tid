@@ -1,0 +1,8 @@
+created: 20141108185050935
+modified: 20141108185953545
+title: DB Terms: Field
+type: text/vnd.tiddlywiki
+
+* An intersection of a [[column|DB Terms: Column]] and a [[row|DB Terms: Row]].
+* Has a single value.
+  ** Example: "John"

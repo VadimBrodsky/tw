@@ -1,0 +1,10 @@
+created: 20141108184540893
+modified: 20141108185259596
+title: DB Terms: Table
+type: text/vnd.tiddlywiki
+
+* Set of columns and rows.
+* In Rails 1 table = 1 model.
+* Represent a single concept (a noun).
+  ** Examples: products, customers, orders
+* Relationships are defined with tables.

@@ -1,0 +1,11 @@
+created: 20141108185308089
+modified: 20141108190151621
+title: DB Terms: Foreign Key
+type: text/vnd.tiddlywiki
+
+* A table column whose values reference [[rows|DB Terms: Row]] in another table.
+* Relate rows in one table to another through this reference.
+* The foundation of relational [[databases|DB Terms: Database]].
+  ** Example: `subject_id`
+* They are singular as per Rails convention.
+* Always put [[indexes|DB Terms: Index]] on foreign keys.
