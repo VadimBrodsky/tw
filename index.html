@@ -207,8 +207,6 @@ Error message and password prompt
 
 <li>Bundler</li>
 
-<li>Changing the Version of Rails in an Application</li>
-
 <li>Checkout a Remote Branch Locally</li>
 
 <li>Checkout in Git</li>
@@ -265,6 +263,10 @@ Error message and password prompt
 
 <li>Control Structures: Shorthand Conditionals</li>
 
+<li>Controller Action to Render Template</li>
+
+<li>Controller Redirecting Actions</li>
+
 <li>Create a Branch</li>
 
 <li>Creating Rails Project</li>
@@ -303,11 +305,15 @@ Error message and password prompt
 
 <li>ERb Helper: Yield</li>
 
+<li>ERb Template Tags</li>
+
 <li>File Class</li>
 
 <li>FileUtils Class</li>
 
 <li>Git</li>
+
+<li>HashWithIndifferentAccess</li>
 
 <li>Hello World</li>
 
@@ -315,7 +321,11 @@ Error message and password prompt
 
 <li>HighlightExample</li>
 
+<li>HTML Parameters</li>
+
 <li>HTTP Operations</li>
+
+<li>HTTP redirect</li>
 
 <li>Index</li>
 
@@ -323,9 +333,13 @@ Error message and password prompt
 
 <li>Installing Rails</li>
 
+<li>Instance Variables</li>
+
 <li>IRB</li>
 
 <li>Left and Right Justify</li>
+
+<li>link_to method</li>
 
 <li>Many-to-Many Associations</li>
 
@@ -395,6 +409,8 @@ Error message and password prompt
 
 <li>Options for the has_one declaration</li>
 
+<li>params hash</li>
+
 <li>Password Validation</li>
 
 <li>Printing</li>
@@ -417,6 +433,8 @@ Error message and password prompt
 
 <li>Rails Models</li>
 
+<li>Rails Parameters</li>
+
 <li>Rails Routes</li>
 
 <li>Rails Scaffolding</li>
@@ -430,6 +448,8 @@ Error message and password prompt
 <li>Rails-Routes</li>
 
 <li>Red, Green, Refactor</li>
+
+<li>redirect_to method</li>
 
 <li>Remove Local Untracked files</li>
 
@@ -453,7 +473,7 @@ Error message and password prompt
 
 <li>Setting SublimeText Command in Terminal</li>
 
-<li>Simple Route</li>
+<li>Simple, Match Route</li>
 
 <li>SublimeText</li>
 
@@ -467,7 +487,11 @@ Error message and password prompt
 
 <li>Track a remote branch with an Existing Branch</li>
 
+<li>Transferring Data from Controller to Views</li>
+
 <li>Undoing Rails Generated Code</li>
+
+<li>URL Parameters</li>
 
 <li>Using Active Record</li>
 
@@ -7931,20 +7955,6 @@ bundle install --without production
 bundle update rails
 ```</pre>
 </div>
-<div created="20141107113834354" modified="20141107114205467" tags="Rails" title="Changing the Version of Rails in an Application" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>To change the version of rails:
-
-* Generate a new app with `new`.
-* Change the Rails gem version in the `Gemfile`.
-* Run `rake rails:update`.
-* Overwrite the conflicting files.
-
-```bash
-rails new my_app
-bundle install
-rake rails:update
-```</pre>
-</div>
 <div created="20141104172002663" modified="20141104172019414" tags="Git" title="Checkout a Remote Branch Locally" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>```bash
 git branch -a
@@ -8029,21 +8039,21 @@ attr_writer :color
 attr_reader :legs, :arms
 ```</pre>
 </div>
-<div created="20141105012226553" modified="20141105012245797" tags="Ruby" title="Classes: Attributes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105012226553" modified="20141108165409555" tags="Ruby" title="Classes: Attributes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Values that persists inside of an instance. 
-* A special kind of variable - `@variable`.
+* A special kind of variable - `@variable` an [[Instance Variables]].
 * Never has access to instance variables outside of the instance.
-- Only the methods of the class have access to instance variables.
+* Only the methods of the class have access to instance variables.
 
 ```ruby
 class Animal
-	def set_noise(noise)
-		@noise = noise 
-	end
+  def set_noise(noise)
+    @noise = noise 
+  end
 
-	def make_noise
-		@noise
-	end
+  def make_noise
+    @noise
+  end
 end
 
 animal1 = Animal.new
@@ -8638,6 +8648,47 @@ end
 x || = y    # this is the shorthand for above
 ```</pre>
 </div>
+<div created="20141108155049700" modified="20141108155809458" tags="Rails Rails-Controllers" title="Controller Action to Render Template" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>By default the Rails behavious the controller will look for a template with the same name as the action.
+
+```ruby
+def hello
+end
+```
+
+This can also be done more explicitly:
+
+```ruby
+def index
+  render(:template =&gt; 'demo/hello')
+end
+```
+
+Or using a shorthand:
+
+```ruby
+def index
+  render('demo/hello')
+end
+```
+
+Rails can also assume the correct folder based on the controller name, for example `DemoController` would assume that the corresponding views will be under the `/app/views/demo/` folder.
+
+```ruby
+def index
+  render('hello')
+end
+```</pre>
+</div>
+<div created="20141108155923321" modified="20141108171010465" tags="Rails Rails-Controllers" title="Controller Redirecting Actions" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>The controller can redirect instead of rendering a view. 
+
+This will send a request to a different controller and action. To do this rails uses a [[HTTP redirect]] that will change the address of the page, and will initiate a new request to the server.
+
+This is done via the [[redirect_to action]]:
+
+{{redirect_to method}}</pre>
+</div>
 <div created="20141104172909328" modified="20141104172930711" tags="Git" title="Create a Branch" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* To create a new branch use the `checkout` command.
 * Use the `-b` flag to switch to the new branch at creation.
@@ -8646,11 +8697,10 @@ x || = y    # this is the shorthand for above
 git checkout -b branch-name
 ```</pre>
 </div>
-<div created="20141105112612758" modified="20141107111447450" tags="Rails" title="Creating Rails Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105112612758" modified="20141105112705080" tags="Rails" title="Creating Rails Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Navigate to the desired directory.
 * Run the `rails new project_name` command.
 * Can specify the database requirements with the `-d` flag.
-* The default database is SQLite 3.
 
 ```bash
 rails new hello_app
@@ -8688,12 +8738,10 @@ git push --tags &lt;tagname&gt;
 bundle exec rake db:migrate
 ```</pre>
 </div>
-<div created="20141105114954273" modified="20141107120644512" tags="Rails Rails-Routes" title="Default Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105114954273" modified="20141105115019547" tags="Rails Rails-Routes" title="Default Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* More generic routing rule.
-* Matches to contollers, actions and ids - `GET /students/edit/52`
 * Uses a Regex match function.
 * Can also pass a format for file type (json, xml etc.)
-* No longer considered a best practice.
 
 ```ruby
 :controller/:action/:id
@@ -8709,15 +8757,22 @@ match ':controller(/:action(/:id(.:format)))', ;via =&gt; :get
 git branch -d branch-name
 ```</pre>
 </div>
-<div created="20141105113634451" modified="20141105113706929" tags="Rails ERb" title="Embedded Ruby - ERb" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>* ERb is the primary template system in Rails.
-* The `&lt;% ... %&gt;` tag executes the code inside.
-* The `&lt;%= ... %&gt;` tag executes and inserts the result into the template.
+<div created="20141105113634451" modified="20141108164125783" tags="Rails ERb" title="Embedded Ruby - ERb" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>{{ ERb Template Tags }}
 
 ```erb
-&lt;body&gt;
-&lt;%= yield %&gt;
-&lt;/body&gt;
+&lt;%= 1 + 1 %&gt;
+```
+
+```erb
+&lt;% target = 'world' %&gt;
+&lt;%= &quot;Hello #{target}&quot; %&gt;
+```
+
+```erb
+&lt;% 3.times do %&gt;
+  &lt;%= &quot;zzz&quot; %&gt;
+&lt;% end %&gt;
 ```</pre>
 </div>
 <div created="20141105120233754" modified="20141105120309328" tags="Rails Rails-Active-Record Rails-Models" title="Enhancing the Models" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -8805,8 +8860,20 @@ Rails uses a convention of naming the foreign key column in singular lowercase n
 
 The table that is doing the referencing is the one that needs to create the foreign-key column. The model that contains the &quot;belongs-to&quot; needs to have the foreign key column.</pre>
 </div>
-<div color="#0433ff" created="20141105114624690" modified="20141105114627091" title="ERb" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre></pre>
+<div color="#0433ff" created="20141105114624690" modified="20141108163426349" title="ERb" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>ERb stands for Embedded Ruby. It is a templating system to embed Ruby code in the template files.
+
+`hello.html.erb`
+
+* Template name: `hello`
+* Process with: `ERb`
+* Output format: `HTML`
+
+ERb can also output to XML, JSON or JavaScript.
+
+!! ERb Notes:
+&lt;$list filter=&quot;[tag[ERb]!has[draft.of]]&quot;&gt;
+</pre>
 </div>
 <div created="20141105114011174" modified="20141105114021415" tags="ERb Rails" title="ERb Debug Information" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Add this to the view template to see debug info.
@@ -8848,13 +8915,10 @@ The table that is doing the referencing is the one that needs to create the fore
 &lt;%= link_to image_tag(&quot;rails.png&quot;, alt: &quot;Rails&quot;), 'http://rubyonrails.org/' %&gt;
 ```</pre>
 </div>
-<div created="20141105113911357" modified="20141105113928636" tags="ERb Rails" title="ERb Helper: Link_To" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>* Rails helper `link_to` creates links as anchor tags.
-* `&lt;%= link_to &quot;link text&quot;, 'url', {options: &quot;hash&quot;} %&gt;`
+<div created="20141105113911357" modified="20141108172349872" tags="ERb Rails" title="ERb Helper: Link_To" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Use to add links in ERb Templates, this method is better and smarter than hard coding anchor tags.
 
-```erb
-&lt;%= link_to &quot;sample app&quot;, '#', id: &quot;logo&quot; %&gt;
-```</pre>
+{{link_to method}}</pre>
 </div>
 <div created="20141105113953119" modified="20141105114005071" tags="ERb Rails" title="ERb Helper: Render" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Used to render partials in ERb files.
@@ -8873,6 +8937,12 @@ The table that is doing the referencing is the one that needs to create the fore
   &lt;%= yield %&gt;
 &lt;/div&gt;
 ```</pre>
+</div>
+<div created="20141108163056804" modified="20141108163924940" tags="ERb Rails" title="ERb Template Tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>To embed Ruby code in an ERb template use the ERb tags:
+
+* `&lt;% code %&gt;` - executes the Ruby code
+* `&lt;%= code %&gt;` - executes and outputs the Ruby code</pre>
 </div>
 <div created="20141105014201855" modified="20141105014242160" tags="Ruby" title="File Class" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Standard file class.
@@ -8899,6 +8969,14 @@ FileUtils.copy('file_to_copy.txt', 'copied.txt')
 <div created="20141104222358685" modified="20141104222401733" title="Git" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[tag[Git]!has[draft.of]]&quot;&gt;
 </pre>
+</div>
+<div created="20141108173409404" modified="20141108173452563" title="HashWithIndifferentAccess" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Allows to specify keys with either symobols or just strings.
+
+```ruby
+params[:id]
+params['id']
+```</pre>
 </div>
 <div created="20141104134701228" modified="20141104134822648" title="Hello World" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Trying out this TiddlyWiki business.</pre>
@@ -9081,10 +9159,26 @@ class Singleton:
 ```
 </pre>
 </div>
+<div created="20141108173703238" modified="20141108173714878" title="HTML Parameters" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* HTML link parameters is everything to the right of the `?` in URL address.
+* Parameters are key-value pairs separated by `&amp;` ampresands.
+
+```
+/demo/hello/1?page=3&amp;name=vadim
+```</pre>
+</div>
 <div created="20141105113243585" modified="20141105113322779" tags="Rails" title="HTTP Operations" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* `GET` is the most common HTTP operation, used for reading data on the web; it just means “get a page”,
 * `POST` is the next most common operation; it is the request sent by your browser when you submit a form. In Rails applications, `POST` requests are typically used for creating things.
 * `PATCH` and `DELETE`, are designed for updating and destroying things on the remote server. These requests are less common than `GET` and `POST` since browsers are incapable of sending them natively.</pre>
+</div>
+<div created="20141108160222120" modified="20141108160343774" title="HTTP redirect" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>The HTTP Redirect is a status code of the HTTP protocol.
+
+```
+HTTP/1.1 302 Found
+Location: http://localhost:3000/demo/hello
+```</pre>
 </div>
 <div created="20141105121731421" modified="20141105121814405" title="Index" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Note Categories:
@@ -9120,6 +9214,12 @@ rails -v
 gem install mysql2
 ```</pre>
 </div>
+<div created="20141108165127383" modified="20141108170054556" tags="Ruby" title="Instance Variables" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Used within classes, for presistent information.
+* Instance variable denoted `@instance_variable`.
+* Used primarily with [[Class Attribute Methods|Classes: Attribute Methods]].
+* Rails uses Instance Variable to [[transfer data from controller to views|Transferring Data from Controller to Views]]</pre>
+</div>
 <div created="20141105003503128" modified="20141105003956201" tags="Ruby" title="IRB" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Interactive Ruby Shell
 
@@ -9145,6 +9245,22 @@ require &quot;filename.rb&quot;
 ```ruby
 &quot;Hello&quot;.rjust(30, &quot;#&quot;)
 #=&gt; &quot;#########################Hello&quot;
+```</pre>
+</div>
+<div created="20141108171048320" modified="20141108175123574" tags="Rails ERb" title="link_to method" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* A view / ERb helper method to create links as anchor tags.
+* Can also specify a link target hash instad of a url: 
+
+`{:controller =&gt; 'demo', :action =&gt; 'index'}`
+
+```ruby
+&lt;%= link_to &quot;link text&quot;, 'url', {options: &quot;hash&quot;} %&gt;
+
+&lt;%= link_to &quot;sample app&quot;, '#', id: &quot;logo&quot; %&gt;
+&lt;%= link_to('Hello Page 2', {:action =&gt; 'hello'}) %&gt;
+&lt;%= link_to 'Index', {:controller =&gt; 'demo', :action =&gt; 'index'}
+
+&lt;%= link_to('Hello with parameters', {:action =&gt; 'hello', :page =&gt; 5, :id =&gt; 20}) %&gt;%&gt;
 ```</pre>
 </div>
 <div created="20141105121335275" modified="20141105121346163" tags="Rails Rails-Active-Record" title="Many-to-Many Associations" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -9719,6 +9835,20 @@ end
 * If `:dependent`  set to `:delete` the associated object is deleted without calling its destroy method.
 * If `:dependent`  set to `:nullify` the associated object's foreign key is set to `NULL`.</pre>
 </div>
+<div created="20141108173107147" modified="20141108175108261" tags="Rails Rails-Controllers" title="params hash" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* The `params` hash contains all GET and POST variables, including controller and action as set in [[Rails Parameters]].
+* The 'params' hash is a HashWithIndifferentAccess.
+* Parameters are always strings, if numbers are needed an explicit conversion must be done: `@page.to_1`
+
+It is primarily used in the controller:
+
+```ruby
+def hello
+  @id = params['id'].to_i
+  @page = params[:page].to_i
+end
+```</pre>
+</div>
 <div created="20141105115433100" modified="20141105115500837" tags="Rails Rails-Models" title="Password Validation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Use `bcrypt-ruby` gem for password hashing.
 * Add `password_digest` column to the table.
@@ -9830,8 +9960,15 @@ rails c
 rails console --sandbox
 ```</pre>
 </div>
-<div created="20141105115505733" modified="20141105115532605" tags="Rails Rails-Controllers" title="Rails Controllers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>```ruby
+<div created="20141105115505733" modified="20141108155413274" tags="Rails Rails-Controllers" title="Rails Controllers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>When the action is empty Rails will render the corresponding view by default. This action can by specified explicitly by the [[Controller Action to Render Template]]
+
+```ruby
+def hello
+end
+```
+
+```ruby
 def show
   @user = User.find(params[:id])
 end
@@ -9858,14 +9995,27 @@ rails generate controller Users new --no-test-framework
 rails generate model User name:string email:string
 ```</pre>
 </div>
-<div created="20141105114902210" modified="20141107120856826" tags="Rails Rails-Routes" title="Rails Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141108173729965" modified="20141108175114610" tags="Rails Rails-Controllers" title="Rails Parameters" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Use the [[params hash]] to access the passed parameters.
+
+```ruby
+{ :controller =&gt; 'demo',
+  :action =&gt; 'hello',
+  :id =&gt; 1,
+  :page =&gt; 3,
+  :name =&gt; 'vadim' }
+```
+
+The `id` is special because is is part of the [[Default Route]] and positioned on the right side of the `?`.</pre>
+</div>
+<div created="20141105114902210" modified="20141105114921128" tags="Rails Rails-Routes" title="Rails Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rails Routing =&gt; Controller =&gt; Model =&gt; Database =&gt; Controller =&gt; View
 * To see all of the active routes in the app use `rake routes` command
 * Routes are processed top-top-bottom in the `routes.rb` file.
 * Basic route types:
-  ** [[Simple Route]] (match route)
-  ** [[Default Route]]
-  ** [[Root Route]]
+  ** Simple route (match route)
+  ** Default route
+  ** Root route
   
 ```bash
 rake routes
@@ -9895,6 +10045,31 @@ rails generate scaffold User name:string email:string
 <pre>* First write a failing test, represented in many testing tools by the color red.
 * Implement code to get the test to pass, represented by the color green.
 * Refactor the code, changing its form without changing its function.</pre>
+</div>
+<div created="20141108162322286" modified="20141108171029575" tags="Rails Rails-Controllers" title="redirect_to method" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>A controller method that is used to redirect pages:
+
+```ruby
+def other_hello
+  redirect_to(:controller =&gt; 'demo', :action =&gt; 'index')
+end
+```
+
+A Rails default debaviour is to assume that the action will be in the same controller if the `:controller` portion is unspecified.
+
+```ruby
+def other_hello
+  redirect_to(:action =&gt; 'index')
+end
+```
+
+Can also work with urls:
+
+```ruby
+def other_hello
+  redirect_to(&quot;http://www.example.com&quot;)
+end
+```</pre>
 </div>
 <div created="20141104172052190" modified="20141104172252578" tags="Git" title="Remove Local Untracked files" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Use the `git clean` [[command|http://git-scm.com/docs/git-clean]] to remove untracked files from the working tree.
@@ -10003,21 +10178,18 @@ rake db:setup
 git config --global core.editor &quot;subl -w&quot;
 ```</pre>
 </div>
-<div created="20141105114930302" modified="20141107120939740" tags="Rails Rails-Routes" title="Simple Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>* Also called the //Match Route//.
-* Matching the string and sends it to the controller and action via get.
+<div created="20141105114930302" modified="20141105114946371" tags="Rails Rails-Routes" title="Simple, Match Route" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Matching the string and sends it to the controller and action via get.
 * Not very flexible.
 * This also creates a named routes for use in controllers and views: `about_path` and `about_url`.
   * For most app link use `path`.
   * For redirects use `url`.
 
 ```ruby
-# short form
 get &quot;demo/index&quot;
 ```
 
 ```ruby
-# long form
 match &quot;demo/index&quot;, :to =&gt; &quot;demo#index&quot;, :via =&gt; :get
 match '/about', to: 'static_pages#about', via : 'get'
 ```</pre>
@@ -10055,6 +10227,27 @@ git branch -u remote/branch_name
 git branch -u remote/branch_name branch_name
 ```</pre>
 </div>
+<div created="20141108165501882" modified="20141108170659778" tags="Rails Rails-Controllers Rails-Views" title="Transferring Data from Controller to Views" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* The controller is an object in Ruby, Rails creates an instance of the Controller class and assignes instance variables to it.
+* Before Rails renders a template, it gathers all of the controller's [[Instance Variables]] and makes them avaliable to the template.
+* Data that goes from the controller to the view is 1 way only.
+
+If you set an instance variable in the controller, inside that action, then it will be available in the view that gets rendered.
+
+```ruby
+#demo_controller.rb
+def hello
+  @array = [1,2,3,4,5]
+end
+```
+
+```ruby
+#hello.html.erb
+&lt;% @array.each do |n| %&gt;
+  &lt;%= n %&gt;&lt;br&gt;
+&lt;% end %&gt;
+```</pre>
+</div>
 <div created="20141105112951031" modified="20141105113007556" tags="Rails" title="Undoing Rails Generated Code" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>```bash
 rails generate controller FooBarz baz qux
@@ -10071,6 +10264,14 @@ rake db:migrate
 rake db:rollback
 rake db:migrate VERSION=0
 ```</pre>
+</div>
+<div created="20141108172430045" modified="20141108175100106" tags="Rails Rails-Controllers" title="URL Parameters" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! HTML Parameters
+{{HTML Parameters}}
+
+
+!! Rails Parameters
+{{Rails Parameters}}</pre>
 </div>
 <div created="20141105115817204" modified="20141105115833554" tags="Rails Rails-Active-Record" title="Using Active Record" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Create a Ruby class that's named after the table that you want to map, extend the Active Record `Base` class.
@@ -10130,11 +10331,11 @@ validates :email, presence: true, uniqueness: true
 validates :email, presence: true, uniqueness: { case_sensitive: false}
 ```</pre>
 </div>
-<div created="20141105004902775" modified="20141105004943864" tags="Ruby" title="Variables: Scope Indicators" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105004902775" modified="20141108165330870" tags="Ruby" title="Variables: Scope Indicators" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>| !Scope   |  !Syntax     |
 | Global   | `$variable`  |
 | Class    | `@@variable` |
-| Instance | `@variable`  |
+| [[Instance|Instance Variables]] | `@variable`  |
 | Local    | `variable`   |
 | Block    | `variable`   |</pre>
 </div>
