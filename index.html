@@ -159,6 +159,10 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/sidebar</li>
+
+<li>$:/state/tab/sidebar--1835078512</li>
+
 <li>$:/status/IsLoggedIn</li>
 
 <li>$:/status/UserName</li>
@@ -339,6 +343,12 @@ Error message and password prompt
 
 <li>FileUtils Class</li>
 
+<li>Generating Controllers</li>
+
+<li>Generating Models</li>
+
+<li>Genetating Migrations</li>
+
 <li>Git</li>
 
 <li>HashWithIndifferentAccess</li>
@@ -394,6 +404,16 @@ Error message and password prompt
 <li>Methods: Variable Scope</li>
 
 <li>Migrate File</li>
+
+<li>Migration File: Create Table Format</li>
+
+<li>Migration File: Primary Key</li>
+
+<li>Migration File: Table Column Options</li>
+
+<li>Migration File: Table Column Types</li>
+
+<li>Migration File: Timestamps</li>
 
 <li>Model Errors</li>
 
@@ -499,6 +519,8 @@ Error message and password prompt
 
 <li>Ruby exit! Method</li>
 
+<li>Running the Database Migration</li>
+
 <li>Running the Test</li>
 
 <li>Seeding Data</li>
@@ -540,6 +562,8 @@ Error message and password prompt
 <li>View All Branches in Git Repo</li>
 
 <li>Viewing the Database Schema</li>
+
+<li>Why Use Migrations</li>
 
 <li>Working With Files</li>
 
@@ -7573,13 +7597,19 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div created="20141104134936346" modified="20141104135010837" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>tw</pre>
 </div>
+<div modified="20141110125054417" title="$:/state/sidebar" revision="6" bag="default">
+<pre>yes</pre>
+</div>
+<div modified="20141110113806841" title="$:/state/tab/sidebar--1835078512" revision="4" bag="default">
+<pre>$:/core/ui/SideBar/Open</pre>
+</div>
 <div title="$:/status/IsLoggedIn" revision="2" bag="default">
 <pre>yes</pre>
 </div>
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="GettingStarted Index" title="$:/StoryList" revision="36" bag="default">
+<div list="GettingStarted Index" title="$:/StoryList" revision="127" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -7596,10 +7626,10 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
     }
 }</pre>
 </div>
-<div created="20141108211809137" modified="20141108212607220" title="$:/temp/NewTagName" revision="30" bag="default">
+<div created="20141110115029548" modified="20141110125206297" title="$:/temp/NewTagName" revision="100" bag="default">
 <pre></pre>
 </div>
-<div created="20141108211750506" modified="20141108213329164" title="$:/temp/search" revision="13" bag="default">
+<div created="20141110113846057" modified="20141110125245036" title="$:/temp/search" revision="94" bag="default">
 <pre></pre>
 </div>
 <div created="20141104173510177" modified="20141104173509021" title="$:/theme" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -8753,7 +8783,7 @@ This is done via the [[redirect_to action]]:
 git checkout -b branch-name
 ```</pre>
 </div>
-<div created="20141108210551551" modified="20141108210737047" title="Create a Database in MySQL" revision="2" bag="default">
+<div created="20141108210551551" modified="20141108210737047" title="Create a Database in MySQL" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>4 basic database commands:
 
 * `SHOW DATABASES;`
@@ -8761,7 +8791,7 @@ git checkout -b branch-name
 * `USE db_name;`
 * `DROP DATABASE db_name;`</pre>
 </div>
-<div created="20141108210921999" modified="20141108211312756" title="Creating a New MySQL User" revision="4" bag="default">
+<div created="20141108210921999" modified="20141108211312756" title="Creating a New MySQL User" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>It's a bad practice to use the root database user for the applicaiton. Create an app user name instead.
 
 This will create the user and will grant privileges.
@@ -8811,14 +8841,14 @@ git push --tags
 git push --tags &lt;tagname&gt;
 ```</pre>
 </div>
-<div created="20141105113041996" modified="20141105113059234" tags="Rails" title="Database Migration" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>* To update the database based on changes in the code run a migration.
-* To make sure that the right version of Rake runs use the `bundle exec` addition.
-* To see all available rake tasks run `bundle exec rake -T`.
+<div created="20141105113041996" modified="20141110115340372" tags="Rails" title="Database Migration" type="text/vnd.tiddlywiki" revision="3" bag="default">
+<pre>* Set of dabase instuctions, written in [[Ruby]] code.
+* Migrate the database from one state to another.
+  ** Moving //up// to a new state.
+  ** Moving back //down// to previous state.
 
-```bash
-bundle exec rake db:migrate
-```</pre>
+!! Why Use Migrations
+{{Why Use Migrations}}</pre>
 </div>
 <div created="20141108184722052" modified="20141108185254790" title="DB Terms: Column" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* A set of data of a single simple type
@@ -9110,6 +9140,39 @@ File.delete('new_file_name.txt')
 require fileutils 		# Ruby built-in library
 FileUtils.copy('file_to_copy.txt', 'copied.txt')
 ```</pre>
+</div>
+<div created="20141110120948545" modified="20141110121055501" tags="Rails Rails-Controllers" title="Generating Controllers" revision="1" bag="default">
+<pre>* Uses the [[Rails Generate]] command.
+
+```bash
+rails generate controller Users new
+rails generate controller Users new --no-test-framework
+```</pre>
+</div>
+<div created="20141110120703906" modified="20141110121923341" tags="Rails Rails-Models" title="Generating Models" revision="4" bag="default">
+<pre>* To generate a [[Rails model|Rails Models]] run the [[Rails Generate]] command.
+* This will create a [[migration file|Migrate File]].
+
+```bash
+rails generate model User
+```
+
+The datbase [[column|DB Terms: Column]] definitions can also be specified:
+
+```bash
+rails generate model User name:string email:string
+```</pre>
+</div>
+<div created="20141110115347314" modified="20141110120431026" tags="Rails" title="Genetating Migrations" revision="4" bag="default">
+<pre>* Migrations reside in the `/db/migrate` folder of the Rails application.
+* To generate a migration use the [[Rails Generate]] command.
+* Migration names are written in camel case:
+
+```bash
+rails generate migration DoNothingYet
+```
+
+* Rails generates a new migration when a model is generated.</pre>
 </div>
 <div created="20141104222358685" modified="20141104222401733" title="Git" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[tag[Git]!has[draft.of]]&quot;&gt;
@@ -9567,7 +9630,7 @@ add, sub = add_and_subtract(8, 3)	#=&gt; Double assignment to an array
 * Method names and variable names can look the same, be careful.
 * Global `$variable`, class `@@variable` and instance `@variable` can span the scope of the method.</pre>
 </div>
-<div created="20141105115129777" modified="20141105115211459" tags="Rails Rails-Models" title="Migrate File" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105115129777" modified="20141110125208763" tags="Rails Rails-Models fix-me" title="Migrate File" type="text/vnd.tiddlywiki" revision="3" bag="default">
 <pre>* Migrations provide a way to alter the structure of the database incrementally, so that our data model can adapt to changing requirements.
 * Migration file is prefixed by a timestamp based on when the migration was generated.
 * `/db/migrate/[timestamp]_create_users.rb`
@@ -9581,15 +9644,26 @@ add, sub = add_and_subtract(8, 3)	#=&gt; Double assignment to an array
 ```ruby
 class CreateUsers &lt; ActiveRecord::Migration
   def change
-  create_table :users do |t|
-    t.string :name
-    t.string :email
+    create_table :users do |t|
+      t.string :name
+      t.string :email
 
-    t.timestamps
-  end
+      t.timestamps
+    end
   end
 end
 ```
+
+Complex migrations can be specified explicitly with the `up` and `down` methods instead of `change`:
+
+```ruby
+def up
+end
+
+def down
+end
+```
+
 
 ```bash
 bundle exec rake db:migrate
@@ -9598,6 +9672,85 @@ bundle exec rake db:rollback
 
 ```bash
 bundle exec rake test:prepare
+```</pre>
+</div>
+<div created="20141110122009232" modified="20141110122652527" tags="Rails" title="Migration File: Create Table Format" revision="5" bag="default">
+<pre>Generic:
+
+```ruby
+create_table &quot;table&quot; do |t|
+  t.column &quot;name&quot;, :type, options
+  t.type &quot;name&quot;, options
+end
+```
+
+Long Form:
+
+```ruby
+create_table :users do |t|
+  t.column &quot;first_name&quot;, :string
+end
+```
+
+Short Form:
+
+```ruby
+create_table :users do |t|
+  t.string :name
+```</pre>
+</div>
+<div created="20141110124815547" modified="20141110125055154" tags="Rails" title="Migration File: Primary Key" revision="2" bag="default">
+<pre>* Rails automatically adds an `id` -- primary key to all tables by default.
+* Its auto-incrementing.
+* To turn off this default -- pass an option:
+
+```ruby
+crate_table :users, {:id =&gt; false} do |t|
+  ...
+end
+```</pre>
+</div>
+<div created="20141110123013345" modified="20141110123408311" tags="Rails" title="Migration File: Table Column Options" revision="3" bag="default">
+<pre>* How large a value can be -- `:limit`
+* A default value -- `:default`
+* Can it have no value at all -- `:null`
+
+```ruby
+:limit     =&gt; size
+:default   =&gt; value
+:null      =&gt; true/false
+
+# for decimal columns
+:precision =&gt; number
+:scale     =&gt; number
+```</pre>
+</div>
+<div created="20141110122715605" modified="20141110123150862" tags="Rails" title="Migration File: Table Column Types" revision="1" bag="default">
+<pre>| !Type     |
+|`binary`   |
+|`boolean`  |
+|`date`     |
+|`datetime` |
+|`decimal`  |
+|`float`    |
+|`integer`  |
+|`string`   |
+|`text`     |
+|`time`     |</pre>
+</div>
+<div created="20141110123545938" modified="20141110124956041" tags="Rails" title="Migration File: Timestamps" revision="1" bag="default">
+<pre>* Rails has special columns for creation and updates.
+* Rails automatiaclly populates and updates these columns.
+
+```ruby
+t.datetime &quot;created_at&quot;
+t.datetime &quot;updated_at&quot;
+```
+
+The shorthand for these columns:
+
+```ruby
+t.timestamps
 ```</pre>
 </div>
 <div created="20141105120211566" modified="20141105120228404" tags="Rails Rails-Active-Record Rails-Models" title="Model Errors" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10119,7 +10272,7 @@ def show
 end
 ```</pre>
 </div>
-<div created="20141108211801112" modified="20141108212039522" tags="Rails" title="Rails Environments" revision="1" bag="default">
+<div created="20141108211801112" modified="20141108212039522" tags="Rails" title="Rails Environments" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Development
 * Production
 * Test
@@ -10137,15 +10290,12 @@ rails generate controller demo index
 rails generate controller StaticPages home help
 ```</pre>
 </div>
-<div created="20141105115043073" modified="20141105115121539" tags="Rails Rails-Models" title="Rails Models" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105115043073" modified="20141110121340557" tags="Rails Rails-Models" title="Rails Models" type="text/vnd.tiddlywiki" revision="3" bag="default">
 <pre>* Communicates and abstracts the database.
 * Solves the persistence problem.
-
-```bash
-rails generate controller Users new
-rails generate controller Users new --no-test-framework
-rails generate model User name:string email:string
-```</pre>
+* Creates a migration file.
+* Model names are singular, [[table|DB Terms: Table]] names are plural.
+* To create a new model run the [[generate model|Generating Models]] command.</pre>
 </div>
 <div created="20141108173729965" modified="20141108175114610" tags="Rails Rails-Controllers" title="Rails Parameters" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Use the [[params hash]] to access the passed parameters.
@@ -10193,7 +10343,7 @@ rails generate scaffold User name:string email:string
 <div color="#942192" created="20141105114641356" modified="20141105114641356" title="Rails-Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20141108212559067" modified="20141108213115256" tags="Rails Rails-rake" title="Rake" revision="4" bag="default">
+<div created="20141108212559067" modified="20141110114154501" tags="Rails Rails-rake" title="Rake" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>* Rake is a simple Ruby helper program.
 * Performs tasks by running scripts.
 * Similar  to Unix's make program.
@@ -10209,7 +10359,7 @@ rake -T
 rake -T db # only the database tasks
 ```
 
-Rake can also accept environment variables:
+Rake can also accept [[Rails Environments]] variables:
 
 ```bash
 rake db:schema:dump RAILS_ENV=production
@@ -10305,6 +10455,15 @@ root 'static_pages#home'
 <pre>* Will stop the script and exit to the command line.
 * Stops right away.
 * `exit!`</pre>
+</div>
+<div created="20141110120437544" modified="20141110120454028" tags="Rails" title="Running the Database Migration" revision="1" bag="default">
+<pre>* To update the database based on changes in the code run a migration.
+* To make sure that the right version of Rake runs use the `bundle exec` addition.
+* To see all available rake tasks run `bundle exec rake -T`.
+
+```bash
+bundle exec rake db:migrate
+```</pre>
 </div>
 <div created="20141105113556958" modified="20141105113615243" tags="Rails TDD" title="Running the Test" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* To get the test to run need to add the Capybara DSL to the RSpec helper file.
@@ -10522,7 +10681,7 @@ git branch
 git branch -a
 ```</pre>
 </div>
-<div created="20141108212347085" modified="20141108212546126" tags="Rails Rails-rake" title="Viewing the Database Schema" revision="2" bag="default">
+<div created="20141108212347085" modified="20141108212546126" tags="Rails Rails-rake" title="Viewing the Database Schema" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>To see the database schema use the `rake` command:
 
 ```bash
@@ -10530,6 +10689,13 @@ rake db:schema:dump
 ```
 
 If the database connection is not defined the above command will fail.</pre>
+</div>
+<div created="20141110115009048" modified="20141110115625397" tags="Rails" title="Why Use Migrations" revision="4" bag="default">
+<pre>* Keeps the database schema with the application code.
+* Executable and repeatable using [[Migration Files|Migrate File]]
+* Allows sharing schema changes.
+* Helps with versioning.
+* Allows writing Ruby instead of SQL.</pre>
 </div>
 <div created="20141105013208822" modified="20141105013303429" tags="Ruby" title="Working With Files" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Ruby can work with files with the IO of the standard library.</pre>
@@ -10770,7 +10936,7 @@ describe &quot;Static pages&quot; do
 end
 ```</pre>
 </div>
-<div created="20141108211441986" modified="20141108212344204" tags="Rails" title="YAML" revision="2" bag="default">
+<div created="20141108211441986" modified="20141108212344204" tags="Rails" title="YAML" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* YAML Ain't Markup Language
 * YAML is a way of structuring a simple text file.
 * Suited for serialized data such as configurations.</pre>
