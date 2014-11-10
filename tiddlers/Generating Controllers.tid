@@ -1,0 +1,12 @@
+created: 20141110120948545
+modified: 20141110121055501
+tags: Rails Rails-Controllers
+title: Generating Controllers
+type: text/vnd.tiddlywiki
+
+* Uses the [[Rails Generate]] command.
+
+```bash
+rails generate controller Users new
+rails generate controller Users new --no-test-framework
+```

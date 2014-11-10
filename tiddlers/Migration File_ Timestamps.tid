@@ -1,0 +1,19 @@
+created: 20141110123545938
+modified: 20141110124956041
+tags: Rails
+title: Migration File: Timestamps
+type: text/vnd.tiddlywiki
+
+* Rails has special columns for creation and updates.
+* Rails automatiaclly populates and updates these columns.
+
+```ruby
+t.datetime "created_at"
+t.datetime "updated_at"
+```
+
+The shorthand for these columns:
+
+```ruby
+t.timestamps
+```

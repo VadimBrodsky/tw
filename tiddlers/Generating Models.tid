@@ -1,0 +1,18 @@
+created: 20141110120703906
+modified: 20141110121923341
+tags: Rails Rails-Models
+title: Generating Models
+type: text/vnd.tiddlywiki
+
+* To generate a [[Rails model|Rails Models]] run the [[Rails Generate]] command.
+* This will create a [[migration file|Migrate File]].
+
+```bash
+rails generate model User
+```
+
+The datbase [[column|DB Terms: Column]] definitions can also be specified:
+
+```bash
+rails generate model User name:string email:string
+```

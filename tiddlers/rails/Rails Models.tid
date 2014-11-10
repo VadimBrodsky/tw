@@ -1,14 +1,11 @@
 created: 20141105115043073
-modified: 20141105115121539
+modified: 20141110121340557
 tags: Rails Rails-Models
 title: Rails Models
 type: text/vnd.tiddlywiki
 
 * Communicates and abstracts the database.
 * Solves the persistence problem.
-
-```bash
-rails generate controller Users new
-rails generate controller Users new --no-test-framework
-rails generate model User name:string email:string
-```
+* Creates a migration file.
+* Model names are singular, [[table|DB Terms: Table]] names are plural.
+* To create a new model run the [[generate model|Generating Models]] command.

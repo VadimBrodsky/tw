@@ -1,6 +1,6 @@
 created: 20141105115129777
-modified: 20141105115211459
-tags: Rails Rails-Models
+modified: 20141110125208763
+tags: Rails Rails-Models fix-me
 title: Migrate File
 type: text/vnd.tiddlywiki
 
@@ -17,15 +17,26 @@ type: text/vnd.tiddlywiki
 ```ruby
 class CreateUsers < ActiveRecord::Migration
   def change
-  create_table :users do |t|
-    t.string :name
-    t.string :email
+    create_table :users do |t|
+      t.string :name
+      t.string :email
 
-    t.timestamps
-  end
+      t.timestamps
+    end
   end
 end
 ```
+
+Complex migrations can be specified explicitly with the `up` and `down` methods instead of `change`:
+
+```ruby
+def up
+end
+
+def down
+end
+```
+
 
 ```bash
 bundle exec rake db:migrate

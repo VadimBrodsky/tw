@@ -1,0 +1,19 @@
+created: 20141110123013345
+modified: 20141110123408311
+tags: Rails
+title: Migration File: Table Column Options
+type: text/vnd.tiddlywiki
+
+* How large a value can be -- `:limit`
+* A default value -- `:default`
+* Can it have no value at all -- `:null`
+
+```ruby
+:limit     => size
+:default   => value
+:null      => true/false
+
+# for decimal columns
+:precision => number
+:scale     => number
+```

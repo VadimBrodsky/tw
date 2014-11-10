@@ -1,0 +1,15 @@
+created: 20141110115347314
+modified: 20141110120431026
+tags: Rails
+title: Genetating Migrations
+type: text/vnd.tiddlywiki
+
+* Migrations reside in the `/db/migrate` folder of the Rails application.
+* To generate a migration use the [[Rails Generate]] command.
+* Migration names are written in camel case:
+
+```bash
+rails generate migration DoNothingYet
+```
+
+* Rails generates a new migration when a model is generated.

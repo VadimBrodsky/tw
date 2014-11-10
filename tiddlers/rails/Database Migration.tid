@@ -1,13 +1,13 @@
 created: 20141105113041996
-modified: 20141105113059234
+modified: 20141110115340372
 tags: Rails
 title: Database Migration
 type: text/vnd.tiddlywiki
 
-* To update the database based on changes in the code run a migration.
-* To make sure that the right version of Rake runs use the `bundle exec` addition.
-* To see all available rake tasks run `bundle exec rake -T`.
+* Set of dabase instuctions, written in [[Ruby]] code.
+* Migrate the database from one state to another.
+  ** Moving //up// to a new state.
+  ** Moving back //down// to previous state.
 
-```bash
-bundle exec rake db:migrate
-```
+!! Why Use Migrations
+{{Why Use Migrations}}

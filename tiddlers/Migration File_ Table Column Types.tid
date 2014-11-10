@@ -1,0 +1,17 @@
+created: 20141110122715605
+modified: 20141110123150862
+tags: Rails
+title: Migration File: Table Column Types
+type: text/vnd.tiddlywiki
+
+| !Type     |
+|`binary`   |
+|`boolean`  |
+|`date`     |
+|`datetime` |
+|`decimal`  |
+|`float`    |
+|`integer`  |
+|`string`   |
+|`text`     |
+|`time`     |

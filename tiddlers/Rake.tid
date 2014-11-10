@@ -1,5 +1,5 @@
 created: 20141108212559067
-modified: 20141108213115256
+modified: 20141110114154501
 tags: Rails Rails-rake
 title: Rake
 type: text/vnd.tiddlywiki
@@ -19,7 +19,7 @@ rake -T
 rake -T db # only the database tasks
 ```
 
-Rake can also accept environment variables:
+Rake can also accept [[Rails Environments]] variables:
 
 ```bash
 rake db:schema:dump RAILS_ENV=production

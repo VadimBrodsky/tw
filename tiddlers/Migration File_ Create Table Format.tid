@@ -1,0 +1,29 @@
+created: 20141110122009232
+modified: 20141110122652527
+tags: Rails
+title: Migration File: Create Table Format
+type: text/vnd.tiddlywiki
+
+Generic:
+
+```ruby
+create_table "table" do |t|
+  t.column "name", :type, options
+  t.type "name", options
+end
+```
+
+Long Form:
+
+```ruby
+create_table :users do |t|
+  t.column "first_name", :string
+end
+```
+
+Short Form:
+
+```ruby
+create_table :users do |t|
+  t.string :name
+```

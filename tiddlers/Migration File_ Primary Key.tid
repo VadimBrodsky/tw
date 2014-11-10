@@ -1,0 +1,15 @@
+created: 20141110124815547
+modified: 20141110125055154
+tags: Rails
+title: Migration File: Primary Key
+type: text/vnd.tiddlywiki
+
+* Rails automatically adds an `id` -- primary key to all tables by default.
+* Its auto-incrementing.
+* To turn off this default -- pass an option:
+
+```ruby
+crate_table :users, {:id => false} do |t|
+  ...
+end
+```

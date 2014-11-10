@@ -1,0 +1,11 @@
+created: 20141110115009048
+modified: 20141110115625397
+tags: Rails
+title: Why Use Migrations
+type: text/vnd.tiddlywiki
+
+* Keeps the database schema with the application code.
+* Executable and repeatable using [[Migration Files|Migrate File]]
+* Allows sharing schema changes.
+* Helps with versioning.
+* Allows writing Ruby instead of SQL.
