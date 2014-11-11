@@ -159,8 +159,6 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/sidebar</li>
-
 <li>$:/state/tab/sidebar--1835078512</li>
 
 <li>$:/status/IsLoggedIn</li>
@@ -200,6 +198,8 @@ Error message and password prompt
 <li>Active Record: Update</li>
 
 <li>Adding a Remote to a Repo</li>
+
+<li>Advanced Migration Commands</li>
 
 <li>Array Methods</li>
 
@@ -349,6 +349,8 @@ Error message and password prompt
 
 <li>Genetating Migrations</li>
 
+<li>Get Migration Status</li>
+
 <li>Git</li>
 
 <li>HashWithIndifferentAccess</li>
@@ -407,6 +409,8 @@ Error message and password prompt
 
 <li>Migration File: Create Table Format</li>
 
+<li>Migration File: Index Column Options</li>
+
 <li>Migration File: Primary Key</li>
 
 <li>Migration File: Table Column Options</li>
@@ -414,6 +418,16 @@ Error message and password prompt
 <li>Migration File: Table Column Types</li>
 
 <li>Migration File: Timestamps</li>
+
+<li>Migration Methods</li>
+
+<li>Migration Methods: Column Migration</li>
+
+<li>Migration Methods: Execute Migration</li>
+
+<li>Migration Methods: Index Migration</li>
+
+<li>Migration Methods: Table Migration</li>
 
 <li>Model Errors</li>
 
@@ -518,6 +532,8 @@ Error message and password prompt
 <li>Ruby</li>
 
 <li>Ruby exit! Method</li>
+
+<li>Running Migration</li>
 
 <li>Running the Database Migration</li>
 
@@ -7597,11 +7613,8 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div created="20141104134936346" modified="20141104135010837" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>tw</pre>
 </div>
-<div modified="20141110125054417" title="$:/state/sidebar" revision="6" bag="default">
-<pre>yes</pre>
-</div>
-<div modified="20141110113806841" title="$:/state/tab/sidebar--1835078512" revision="4" bag="default">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div modified="20141111110033973" title="$:/state/tab/sidebar--1835078512" revision="1" bag="default">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn" revision="2" bag="default">
 <pre>yes</pre>
@@ -7609,7 +7622,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="GettingStarted Index" title="$:/StoryList" revision="127" bag="default">
+<div list="GettingStarted Index" title="$:/StoryList" revision="129" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -7626,10 +7639,10 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
     }
 }</pre>
 </div>
-<div created="20141110115029548" modified="20141110125206297" title="$:/temp/NewTagName" revision="100" bag="default">
+<div created="20141111112103684" modified="20141111115104417" title="$:/temp/NewTagName" revision="49" bag="default">
 <pre></pre>
 </div>
-<div created="20141110113846057" modified="20141110125245036" title="$:/temp/search" revision="94" bag="default">
+<div created="20141111112026919" modified="20141111121145503" title="$:/temp/search" revision="35" bag="default">
 <pre></pre>
 </div>
 <div created="20141104173510177" modified="20141104173509021" title="$:/theme" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -7916,6 +7929,26 @@ article.update_attributes(:title =&gt; &quot;RailsConf2014&quot;, :published_at 
 <pre>```bash
 git remote add origin https://github.com/&lt;username&gt;/first_app.git
 git push -u origin master
+```</pre>
+</div>
+<div created="20141111113428797" modified="20141111113703199" tags="Rails" title="Advanced Migration Commands" revision="1" bag="default">
+<pre>Will run up the specific migration only, without all of the sequential steps up to this version.
+
+```bash
+rake db:migrate:up VERSION=20141110121423
+```
+
+Same as above but will run down the specific migration.
+
+```bash
+rake db:migrate:down VERSION=20141110121423
+```
+
+Run down and up either the most recent migration (without arguments) or a specific version.
+
+```bash
+rake db:migrate:redo
+rake db:migrate:redo VERSION=20141110121423
 ```</pre>
 </div>
 <div created="20141105005254276" modified="20141105005314876" tags="Ruby" title="Array Methods" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -8841,14 +8874,19 @@ git push --tags
 git push --tags &lt;tagname&gt;
 ```</pre>
 </div>
-<div created="20141105113041996" modified="20141110115340372" tags="Rails" title="Database Migration" type="text/vnd.tiddlywiki" revision="3" bag="default">
+<div created="20141105113041996" modified="20141111112311177" tags="Rails" title="Database Migration" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>* Set of dabase instuctions, written in [[Ruby]] code.
 * Migrate the database from one state to another.
   ** Moving //up// to a new state.
   ** Moving back //down// to previous state.
 
 !! Why Use Migrations
-{{Why Use Migrations}}</pre>
+{{Why Use Migrations}}
+
+!! Workflow
+# [[Genetating Migrations]]
+# Customize the [[Migrate File]]
+# [[Running Migration]]</pre>
 </div>
 <div created="20141108184722052" modified="20141108185254790" title="DB Terms: Column" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* A set of data of a single simple type
@@ -8890,9 +8928,11 @@ git push --tags &lt;tagname&gt;
 * They are singular as per Rails convention.
 * Always put [[indexes|DB Terms: Index]] on foreign keys.</pre>
 </div>
-<div created="20141108185138295" modified="20141108185240334" title="DB Terms: Index" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141108185138295" modified="20141111120426238" title="DB Terms: Index" type="text/vnd.tiddlywiki" revision="2" bag="default">
 <pre>* Data structure on a table that increases the look-up speed.
-* Like an Index on a back of a book.</pre>
+* Like an Index on a back of a book.
+* Should always add index to all [[foreign keys|DB Terms: Foreign Key]].
+* Should add index to columns that are used frequently to look up records, like username.</pre>
 </div>
 <div created="20141108184922156" modified="20141108185250121" title="DB Terms: Row" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rows are the data, each row equals to an object or an instance of a model.
@@ -9141,7 +9181,7 @@ require fileutils 		# Ruby built-in library
 FileUtils.copy('file_to_copy.txt', 'copied.txt')
 ```</pre>
 </div>
-<div created="20141110120948545" modified="20141110121055501" tags="Rails Rails-Controllers" title="Generating Controllers" revision="1" bag="default">
+<div created="20141110120948545" modified="20141110121055501" tags="Rails Rails-Controllers" title="Generating Controllers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Uses the [[Rails Generate]] command.
 
 ```bash
@@ -9149,7 +9189,7 @@ rails generate controller Users new
 rails generate controller Users new --no-test-framework
 ```</pre>
 </div>
-<div created="20141110120703906" modified="20141110121923341" tags="Rails Rails-Models" title="Generating Models" revision="4" bag="default">
+<div created="20141110120703906" modified="20141110121923341" tags="Rails Rails-Models" title="Generating Models" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* To generate a [[Rails model|Rails Models]] run the [[Rails Generate]] command.
 * This will create a [[migration file|Migrate File]].
 
@@ -9163,7 +9203,7 @@ The datbase [[column|DB Terms: Column]] definitions can also be specified:
 rails generate model User name:string email:string
 ```</pre>
 </div>
-<div created="20141110115347314" modified="20141110120431026" tags="Rails" title="Genetating Migrations" revision="4" bag="default">
+<div created="20141110115347314" modified="20141111112340058" tags="Rails" title="Genetating Migrations" type="text/vnd.tiddlywiki" revision="4" bag="default">
 <pre>* Migrations reside in the `/db/migrate` folder of the Rails application.
 * To generate a migration use the [[Rails Generate]] command.
 * Migration names are written in camel case:
@@ -9173,6 +9213,13 @@ rails generate migration DoNothingYet
 ```
 
 * Rails generates a new migration when a model is generated.</pre>
+</div>
+<div created="20141111113031528" modified="20141111113118810" tags="Rails" title="Get Migration Status" revision="1" bag="default">
+<pre>* To see the status of the migration, see what is up and what is down.
+
+```bash
+rake db:migrate:status
+```</pre>
 </div>
 <div created="20141104222358685" modified="20141104222401733" title="Git" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[tag[Git]!has[draft.of]]&quot;&gt;
@@ -9630,15 +9677,14 @@ add, sub = add_and_subtract(8, 3)	#=&gt; Double assignment to an array
 * Method names and variable names can look the same, be careful.
 * Global `$variable`, class `@@variable` and instance `@variable` can span the scope of the method.</pre>
 </div>
-<div created="20141105115129777" modified="20141110125208763" tags="Rails Rails-Models fix-me" title="Migrate File" type="text/vnd.tiddlywiki" revision="3" bag="default">
+<div created="20141105115129777" modified="20141111121034742" tags="Rails Rails-Models fix-me" title="Migrate File" type="text/vnd.tiddlywiki" revision="3" bag="default">
 <pre>* Migrations provide a way to alter the structure of the database incrementally, so that our data model can adapt to changing requirements.
 * Migration file is prefixed by a timestamp based on when the migration was generated.
 * `/db/migrate/[timestamp]_create_users.rb`
 * The migration consists of a `change` method that determines the change to be made to the database.
-* `t.timestamps`: is a special command that creates two columns called `created_at` and `updated_at`, which are timestamps that automatically record when a given user is created and updated.
 * We can run the migration, known as “migrating up”, using the rake command.
-* Most migrations are reversible, which means we can “migrate down” and undo them with a single Rake task, called `db:rollback`.
 * `rake test:prepare`: ensures that the data model from the development database, `db/development.sqlite3`, is reflected in the test database `db/test.sqlite3`, assuming that SQLite is used locally.
+* Can include `puts` comments in the migrate file, to be output in the terminal during the migration.
 
 
 ```ruby
@@ -9672,10 +9718,14 @@ bundle exec rake db:rollback
 
 ```bash
 bundle exec rake test:prepare
+```
+
+```ruby
+puts &quot;*** Adding an index is next ***&quot;
 ```</pre>
 </div>
-<div created="20141110122009232" modified="20141110122652527" tags="Rails" title="Migration File: Create Table Format" revision="5" bag="default">
-<pre>Generic:
+<div created="20141110122009232" modified="20141111114950391" tags="Rails" title="Migration File: Create Table Format" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<pre>!! Generic:
 
 ```ruby
 create_table &quot;table&quot; do |t|
@@ -9684,7 +9734,7 @@ create_table &quot;table&quot; do |t|
 end
 ```
 
-Long Form:
+!! Long Form:
 
 ```ruby
 create_table :users do |t|
@@ -9692,14 +9742,22 @@ create_table :users do |t|
 end
 ```
 
-Short Form:
+!! Short Form:
 
 ```ruby
 create_table :users do |t|
   t.string :name
 ```</pre>
 </div>
-<div created="20141110124815547" modified="20141110125055154" tags="Rails" title="Migration File: Primary Key" revision="2" bag="default">
+<div created="20141111114729670" modified="20141111114850965" tags="Rails" title="Migration File: Index Column Options" revision="1" bag="default">
+<pre>* The index column has different options that the regular [[column options|Migration File: Table Column Options]].
+
+```ruby
+:unique =&gt; true/false
+:name   =&gt; &quot;your_custom_name&quot;
+```</pre>
+</div>
+<div created="20141110124815547" modified="20141110125055154" tags="Rails" title="Migration File: Primary Key" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rails automatically adds an `id` -- primary key to all tables by default.
 * Its auto-incrementing.
 * To turn off this default -- pass an option:
@@ -9710,7 +9768,7 @@ crate_table :users, {:id =&gt; false} do |t|
 end
 ```</pre>
 </div>
-<div created="20141110123013345" modified="20141110123408311" tags="Rails" title="Migration File: Table Column Options" revision="3" bag="default">
+<div created="20141110123013345" modified="20141110123408311" tags="Rails" title="Migration File: Table Column Options" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* How large a value can be -- `:limit`
 * A default value -- `:default`
 * Can it have no value at all -- `:null`
@@ -9725,7 +9783,7 @@ end
 :scale     =&gt; number
 ```</pre>
 </div>
-<div created="20141110122715605" modified="20141110123150862" tags="Rails" title="Migration File: Table Column Types" revision="1" bag="default">
+<div created="20141110122715605" modified="20141110123150862" tags="Rails" title="Migration File: Table Column Types" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>| !Type     |
 |`binary`   |
 |`boolean`  |
@@ -9738,8 +9796,9 @@ end
 |`text`     |
 |`time`     |</pre>
 </div>
-<div created="20141110123545938" modified="20141110124956041" tags="Rails" title="Migration File: Timestamps" revision="1" bag="default">
-<pre>* Rails has special columns for creation and updates.
+<div created="20141110123545938" modified="20141111113216900" tags="Rails" title="Migration File: Timestamps" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<pre>* `t.timestamps`: is a special command that creates two columns called `created_at` and `updated_at`, which are timestamps that automatically record when a given user is created and updated.
+* Rails has special columns for creation and updates.
 * Rails automatiaclly populates and updates these columns.
 
 ```ruby
@@ -9751,6 +9810,90 @@ The shorthand for these columns:
 
 ```ruby
 t.timestamps
+```</pre>
+</div>
+<div created="20141111113724702" modified="20141111120717644" tags="Rails" title="Migration Methods" revision="4" bag="default">
+<pre>* [[Migrations files|Migrate File]] allow for different methods.
+* Some are reversible with the `change` method, while some are not.
+* Good practice to use the `up` and `down` methods for complex migrations.
+* Method in the `down` action will appear reversed as compared to the `up` action.
+
+# [[Migration Methods: Table Migration]]
+# [[Migration Methods: Column Migration]]
+# [[Migration Methods: Index Migration]]
+# [[Migration Methods: Execute Migration]]</pre>
+</div>
+<div created="20141111114026511" modified="20141111120030816" tags="Rails" title="Migration Methods: Column Migration" revision="5" bag="default">
+<pre>!! Add column
+* Takes the long-form [[column format|Migration File: Create Table Format]].
+
+```ruby
+add_column(table, column, type, options)
+```
+
+!! Remove Column:
+
+```ruby
+remove_column(table, column)
+```
+
+!! Rename Column:
+
+```ruby
+rename_column(table, column, new_name)
+```
+
+!! Change Column:
+* This will overwrite any previously set types or options.
+
+```ruby
+change_column(table, columns, type, options)
+```</pre>
+</div>
+<div created="20141111115052352" modified="20141111115238423" tags="Rails" title="Migration Methods: Execute Migration" revision="2" bag="default">
+<pre>!! Executes any String of SQL
+* Keep in mind that custom SQL queries will be database specific.
+
+```ruby
+execute(&quot;any SQL string&quot;)
+```</pre>
+</div>
+<div created="20141111114459785" modified="20141111120415314" tags="Rails" title="Migration Methods: Index Migration" revision="7" bag="default">
+<pre>!! Add index
+* Can also send an array of columns to add indexes to multiple columns.
+* [[Index options|Migration File: Index Column Options]] are different than column options.
+* Should always add index to all [[foreign keys|DB Terms: Foreign Key]].
+* Should add index to columns that are used frequently to look up records, like username.
+
+```ruby
+add_index(table, column, options)
+```
+
+!! Remove index:
+
+```ruby
+remove_index(table, column)
+```</pre>
+</div>
+<div created="20141111113819117" modified="20141111115026429" tags="Rails" title="Migration Methods: Table Migration" revision="5" bag="default">
+<pre>!! Create table:
+
+```ruby
+create_table(table, options) do |t|
+  ...columns...
+end
+```
+
+!! Drop Table:
+
+```ruby
+drop_table(table)
+```
+
+!! Rename Table:
+
+```ruby
+rename_table(table, new_name)
 ```</pre>
 </div>
 <div created="20141105120211566" modified="20141105120228404" tags="Rails Rails-Active-Record Rails-Models" title="Model Errors" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10290,7 +10433,7 @@ rails generate controller demo index
 rails generate controller StaticPages home help
 ```</pre>
 </div>
-<div created="20141105115043073" modified="20141110121340557" tags="Rails Rails-Models" title="Rails Models" type="text/vnd.tiddlywiki" revision="3" bag="default">
+<div created="20141105115043073" modified="20141110121340557" tags="Rails Rails-Models" title="Rails Models" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Communicates and abstracts the database.
 * Solves the persistence problem.
 * Creates a migration file.
@@ -10343,7 +10486,7 @@ rails generate scaffold User name:string email:string
 <div color="#942192" created="20141105114641356" modified="20141105114641356" title="Rails-Routes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20141108212559067" modified="20141110114154501" tags="Rails Rails-rake" title="Rake" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20141108212559067" modified="20141110114154501" tags="Rails Rails-rake" title="Rake" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rake is a simple Ruby helper program.
 * Performs tasks by running scripts.
 * Similar  to Unix's make program.
@@ -10456,7 +10599,25 @@ root 'static_pages#home'
 * Stops right away.
 * `exit!`</pre>
 </div>
-<div created="20141110120437544" modified="20141110120454028" tags="Rails" title="Running the Database Migration" revision="1" bag="default">
+<div created="20141111112055837" modified="20141111113333453" tags="Rails" title="Running Migration" revision="6" bag="default">
+<pre>* Need to run the migration in order to implement the changes in the [[migration file|Migrate File]].
+* Rails will run all of the migration what were not yet run.
+* Most migrations are reversible, which means we can “migrate down” and undo them with a single Rake task, called `db:rollback`.
+
+Migrate up:
+
+```bash
+rake db:migrate
+```
+
+Migrate down to specific version:
+
+```bash
+rake db:migrate VERSION=0
+rake db:migrate VERSION=20141110121423
+```</pre>
+</div>
+<div created="20141110120437544" modified="20141110120454028" tags="Rails" title="Running the Database Migration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* To update the database based on changes in the code run a migration.
 * To make sure that the right version of Rake runs use the `bundle exec` addition.
 * To see all available rake tasks run `bundle exec rake -T`.
@@ -10690,7 +10851,7 @@ rake db:schema:dump
 
 If the database connection is not defined the above command will fail.</pre>
 </div>
-<div created="20141110115009048" modified="20141110115625397" tags="Rails" title="Why Use Migrations" revision="4" bag="default">
+<div created="20141110115009048" modified="20141110115625397" tags="Rails" title="Why Use Migrations" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Keeps the database schema with the application code.
 * Executable and repeatable using [[Migration Files|Migrate File]]
 * Allows sharing schema changes.
