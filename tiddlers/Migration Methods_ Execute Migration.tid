@@ -1,0 +1,12 @@
+created: 20141111115052352
+modified: 20141111115238423
+tags: Rails
+title: Migration Methods: Execute Migration
+type: text/vnd.tiddlywiki
+
+!! Executes any String of SQL
+* Keep in mind that custom SQL queries will be database specific.
+
+```ruby
+execute("any SQL string")
+```

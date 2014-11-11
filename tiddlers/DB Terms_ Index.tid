@@ -1,7 +1,9 @@
 created: 20141108185138295
-modified: 20141108185240334
+modified: 20141111120426238
 title: DB Terms: Index
 type: text/vnd.tiddlywiki
 
 * Data structure on a table that increases the look-up speed.
 * Like an Index on a back of a book.
+* Should always add index to all [[foreign keys|DB Terms: Foreign Key]].
+* Should add index to columns that are used frequently to look up records, like username.

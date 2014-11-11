@@ -1,0 +1,11 @@
+created: 20141111113031528
+modified: 20141111113118810
+tags: Rails
+title: Get Migration Status
+type: text/vnd.tiddlywiki
+
+* To see the status of the migration, see what is up and what is down.
+
+```bash
+rake db:migrate:status
+```

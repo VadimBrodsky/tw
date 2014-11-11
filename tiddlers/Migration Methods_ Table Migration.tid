@@ -1,0 +1,25 @@
+created: 20141111113819117
+modified: 20141111115026429
+tags: Rails
+title: Migration Methods: Table Migration
+type: text/vnd.tiddlywiki
+
+!! Create table:
+
+```ruby
+create_table(table, options) do |t|
+  ...columns...
+end
+```
+
+!! Drop Table:
+
+```ruby
+drop_table(table)
+```
+
+!! Rename Table:
+
+```ruby
+rename_table(table, new_name)
+```

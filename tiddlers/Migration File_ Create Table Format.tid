@@ -1,10 +1,10 @@
 created: 20141110122009232
-modified: 20141110122652527
+modified: 20141111114950391
 tags: Rails
 title: Migration File: Create Table Format
 type: text/vnd.tiddlywiki
 
-Generic:
+!! Generic:
 
 ```ruby
 create_table "table" do |t|
@@ -13,7 +13,7 @@ create_table "table" do |t|
 end
 ```
 
-Long Form:
+!! Long Form:
 
 ```ruby
 create_table :users do |t|
@@ -21,7 +21,7 @@ create_table :users do |t|
 end
 ```
 
-Short Form:
+!! Short Form:
 
 ```ruby
 create_table :users do |t|

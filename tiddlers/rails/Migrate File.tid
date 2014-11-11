@@ -1,5 +1,5 @@
 created: 20141105115129777
-modified: 20141110125208763
+modified: 20141111121034742
 tags: Rails Rails-Models fix-me
 title: Migrate File
 type: text/vnd.tiddlywiki
@@ -8,10 +8,9 @@ type: text/vnd.tiddlywiki
 * Migration file is prefixed by a timestamp based on when the migration was generated.
 * `/db/migrate/[timestamp]_create_users.rb`
 * The migration consists of a `change` method that determines the change to be made to the database.
-* `t.timestamps`: is a special command that creates two columns called `created_at` and `updated_at`, which are timestamps that automatically record when a given user is created and updated.
 * We can run the migration, known as “migrating up”, using the rake command.
-* Most migrations are reversible, which means we can “migrate down” and undo them with a single Rake task, called `db:rollback`.
 * `rake test:prepare`: ensures that the data model from the development database, `db/development.sqlite3`, is reflected in the test database `db/test.sqlite3`, assuming that SQLite is used locally.
+* Can include `puts` comments in the migrate file, to be output in the terminal during the migration.
 
 
 ```ruby
@@ -45,4 +44,8 @@ bundle exec rake db:rollback
 
 ```bash
 bundle exec rake test:prepare
+```
+
+```ruby
+puts "*** Adding an index is next ***"
 ```

@@ -1,0 +1,12 @@
+created: 20141111114729670
+modified: 20141111114850965
+tags: Rails
+title: Migration File: Index Column Options
+type: text/vnd.tiddlywiki
+
+* The index column has different options that the regular [[column options|Migration File: Table Column Options]].
+
+```ruby
+:unique => true/false
+:name   => "your_custom_name"
+```

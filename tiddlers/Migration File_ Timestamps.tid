@@ -1,9 +1,10 @@
 created: 20141110123545938
-modified: 20141110124956041
+modified: 20141111113216900
 tags: Rails
 title: Migration File: Timestamps
 type: text/vnd.tiddlywiki
 
+* `t.timestamps`: is a special command that creates two columns called `created_at` and `updated_at`, which are timestamps that automatically record when a given user is created and updated.
 * Rails has special columns for creation and updates.
 * Rails automatiaclly populates and updates these columns.
 

@@ -1,0 +1,24 @@
+created: 20141111113428797
+modified: 20141111113703199
+tags: Rails
+title: Advanced Migration Commands
+type: text/vnd.tiddlywiki
+
+Will run up the specific migration only, without all of the sequential steps up to this version.
+
+```bash
+rake db:migrate:up VERSION=20141110121423
+```
+
+Same as above but will run down the specific migration.
+
+```bash
+rake db:migrate:down VERSION=20141110121423
+```
+
+Run down and up either the most recent migration (without arguments) or a specific version.
+
+```bash
+rake db:migrate:redo
+rake db:migrate:redo VERSION=20141110121423
+```

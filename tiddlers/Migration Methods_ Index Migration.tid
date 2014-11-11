@@ -1,0 +1,21 @@
+created: 20141111114459785
+modified: 20141111120415314
+tags: Rails
+title: Migration Methods: Index Migration
+type: text/vnd.tiddlywiki
+
+!! Add index
+* Can also send an array of columns to add indexes to multiple columns.
+* [[Index options|Migration File: Index Column Options]] are different than column options.
+* Should always add index to all [[foreign keys|DB Terms: Foreign Key]].
+* Should add index to columns that are used frequently to look up records, like username.
+
+```ruby
+add_index(table, column, options)
+```
+
+!! Remove index:
+
+```ruby
+remove_index(table, column)
+```

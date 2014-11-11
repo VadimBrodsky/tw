@@ -1,5 +1,5 @@
 created: 20141105113041996
-modified: 20141110115340372
+modified: 20141111112311177
 tags: Rails
 title: Database Migration
 type: text/vnd.tiddlywiki
@@ -11,3 +11,8 @@ type: text/vnd.tiddlywiki
 
 !! Why Use Migrations
 {{Why Use Migrations}}
+
+!! Workflow
+# [[Genetating Migrations]]
+# Customize the [[Migrate File]]
+# [[Running Migration]]
