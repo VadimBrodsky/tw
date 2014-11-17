@@ -1,0 +1,26 @@
+created: 20141117115023854
+modified: 20141117115517827
+tags: Rails Rails-Active-Record
+title: ActiveRecord
+type: text/vnd.tiddlywiki
+
+* active record: a design pattern for relational databases.
+* ActiveRecord: the Rails implementation of active record pattern.
+* Retreive and manipulate data as objects, not as static row.
+
+!! Active record objects are intelligent
+# Understand the structure of the table.
+# Contain data from table rows.
+# Know how to create, read, update, and delete rows.
+# Can be manipulated as objects, then saved easily.
+
+```ruby
+user = User.new
+user.first_name = "Joe"
+user.save # SQL INSERT
+
+user.last_name = "Smith"
+user.save # SQL UPDATE
+
+user.delete # SQL DELETE
+```

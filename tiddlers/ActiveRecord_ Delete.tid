@@ -1,7 +1,7 @@
 created: 20141105120137550
-modified: 20141105120159196
+modified: 20141117114839431
 tags: Rails Rails-Active-Record
-title: Active Record: Delete
+title: ActiveRecord: Delete
 type: text/vnd.tiddlywiki
 
 There are two styles of row deletion: `destroy` and `delete`.  The `destroy` style works on the instance. The `delete` style operates on the class.

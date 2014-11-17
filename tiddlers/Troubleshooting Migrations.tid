@@ -1,0 +1,10 @@
+created: 20141117114113966
+modified: 20141117114248075
+tags: Rails
+title: Troubleshooting Migrations
+type: text/vnd.tiddlywiki
+
+* Comment out executed code lines to get back on track.
+* Write SQL commands as a last resort.
+* Keep migrations small and concise.
+* Test all migraitions in development.

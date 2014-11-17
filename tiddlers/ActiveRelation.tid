@@ -1,0 +1,28 @@
+created: 20141117115548216
+modified: 20141117120210118
+tags: Rails Rails-Active-Record
+title: ActiveRelation
+type: text/vnd.tiddlywiki
+
+* Was added in Rails V3.
+* Also known as "ARel"
+* Object-oriented interpretation of relational algebra.
+* Simplifies the generation of complex database  queries:
+  ** Small queries are chainable
+  ** Complex joins and aggregations use efficient SQL
+  ** Queries do not execute until needed
+* ActiveRelation is the underpinning of ActiveRecord
+
+```ruby
+users = User.where(:first_name => "Joe")
+users = user.order("last_name ASC").limit(5)
+users = user.include(:articles_authored)
+```
+
+```SQL
+SELECT users.*, articles.*
+FROM users
+LEFT JOIN articles ON (users.id = articles.author_id)
+WHERE users.first_name = 'Joe'
+OEDER BY last_name ASC LIMIT 5
+```

@@ -1,7 +1,7 @@
 created: 20141105120048706
-modified: 20141105120107406
+modified: 20141117114816363
 tags: Rails Rails-Active-Record
-title: Active Record: Read
+title: ActiveRecord: Read
 type: text/vnd.tiddlywiki
 
 Every model class understand the class `find` method. The `find` method can be called in 4 ways:

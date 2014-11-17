@@ -1,7 +1,7 @@
 created: 20141105115922996
-modified: 20141105120021149
+modified: 20141117114929140
 tags: Rails-Active-Record Rails
-title: Active Record: Create
+title: ActiveRecord: Create
 type: text/vnd.tiddlywiki
 
 Creating new objects that will add new records to the database.

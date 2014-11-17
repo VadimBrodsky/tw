@@ -1,7 +1,7 @@
 created: 20141105115836451
-modified: 20141105115856112
+modified: 20141117114858070
 tags: Rails Rails-Active-Record
-title: Active Record Conventions
+title: ActiveRecord Conventions
 type: text/vnd.tiddlywiki
 
 Active Record achieves its zero-configuration by the use of conventions:
