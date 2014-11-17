@@ -159,7 +159,7 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/tab/sidebar--1835078512</li>
+<li>$:/state/sidebar</li>
 
 <li>$:/status/IsLoggedIn</li>
 
@@ -185,17 +185,21 @@ Error message and password prompt
 
 <li>Accessing the Project</li>
 
-<li>Active Record Conventions</li>
+<li>ActiveRecord</li>
 
-<li>Active Record: Create</li>
+<li>ActiveRecord Conventions</li>
 
-<li>Active Record: CRUD</li>
+<li>ActiveRecord: Create</li>
 
-<li>Active Record: Delete</li>
+<li>ActiveRecord: CRUD</li>
 
-<li>Active Record: Read</li>
+<li>ActiveRecord: Delete</li>
 
-<li>Active Record: Update</li>
+<li>ActiveRecord: Read</li>
+
+<li>ActiveRecord: Update</li>
+
+<li>ActiveRelation</li>
 
 <li>Adding a Remote to a Repo</li>
 
@@ -558,6 +562,8 @@ Error message and password prompt
 <li>Track a remote branch with an Existing Branch</li>
 
 <li>Transferring Data from Controller to Views</li>
+
+<li>Troubleshooting Migrations</li>
 
 <li>Undoing Rails Generated Code</li>
 
@@ -7613,8 +7619,8 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div created="20141104134936346" modified="20141104135010837" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>tw</pre>
 </div>
-<div modified="20141111110033973" title="$:/state/tab/sidebar--1835078512" revision="1" bag="default">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div modified="20141117114252361" title="$:/state/sidebar" revision="2" bag="default">
+<pre>yes</pre>
 </div>
 <div title="$:/status/IsLoggedIn" revision="2" bag="default">
 <pre>yes</pre>
@@ -7622,7 +7628,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="GettingStarted Index" title="$:/StoryList" revision="129" bag="default">
+<div list="GettingStarted Index" title="$:/StoryList" revision="42" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -7639,10 +7645,10 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
     }
 }</pre>
 </div>
-<div created="20141111112103684" modified="20141111115104417" title="$:/temp/NewTagName" revision="49" bag="default">
+<div created="20141117114124468" modified="20141117115554790" title="$:/temp/NewTagName" revision="14" bag="default">
 <pre></pre>
 </div>
-<div created="20141111112026919" modified="20141111121145503" title="$:/temp/search" revision="35" bag="default">
+<div created="20141117113528511" modified="20141117120404860" title="$:/temp/search" revision="61" bag="default">
 <pre></pre>
 </div>
 <div created="20141104173510177" modified="20141104173509021" title="$:/theme" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -7738,7 +7744,29 @@ git branch -D bad-branch
 <pre>* Start the web server: `rails server` or `rails s`.
 * Visit the `localhost:3000` site in the browser.</pre>
 </div>
-<div created="20141105115836451" modified="20141105115856112" tags="Rails Rails-Active-Record" title="Active Record Conventions" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141117115023854" modified="20141117115517827" tags="Rails Rails-Active-Record" title="ActiveRecord" revision="2" bag="default">
+<pre>* active record: a design pattern for relational databases.
+* ActiveRecord: the Rails implementation of active record pattern.
+* Retreive and manipulate data as objects, not as static row.
+
+!! Active record objects are intelligent
+# Understand the structure of the table.
+# Contain data from table rows.
+# Know how to create, read, update, and delete rows.
+# Can be manipulated as objects, then saved easily.
+
+```ruby
+user = User.new
+user.first_name = &quot;Joe&quot;
+user.save # SQL INSERT
+
+user.last_name = &quot;Smith&quot;
+user.save # SQL UPDATE
+
+user.delete # SQL DELETE
+```</pre>
+</div>
+<div created="20141105115836451" modified="20141117114858070" tags="Rails Rails-Active-Record" title="ActiveRecord Conventions" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>Active Record achieves its zero-configuration by the use of conventions:
 
 * Class names are singluar; table names are plural.
@@ -7766,7 +7794,7 @@ Article.count
 #=&gt; 5
 ```</pre>
 </div>
-<div created="20141105115922996" modified="20141105120021149" tags="Rails-Active-Record Rails" title="Active Record: Create" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105115922996" modified="20141117114929140" tags="Rails-Active-Record Rails" title="ActiveRecord: Create" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>Creating new objects that will add new records to the database.
 
 ```ruby
@@ -7812,10 +7840,13 @@ Objects can be created in one step, instead of returning `true` or `false` it re
 Article.create(:title =&gt; &quot;RobyConf 2013&quot;, :body =&gt; &quot;The annual...&quot;, :published_at =&gt; '2013-04-13')
 ```</pre>
 </div>
-<div created="20141105115911240" modified="20141105115920650" tags="Rails-Active-Record Rails" title="Active Record: CRUD" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre></pre>
+<div created="20141105115911240" modified="20141117115014474" tags="Rails-Active-Record Rails" title="ActiveRecord: CRUD" type="text/vnd.tiddlywiki" revision="2" bag="default">
+<pre># [[ActiveRecord: Create]]
+# [[ActiveRecord: Read]]
+# [[ActiveRecord: Update]]
+# [[ActiveRecord: Delete]]</pre>
 </div>
-<div created="20141105120137550" modified="20141105120159196" tags="Rails Rails-Active-Record" title="Active Record: Delete" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105120137550" modified="20141117114839431" tags="Rails Rails-Active-Record" title="ActiveRecord: Delete" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>There are two styles of row deletion: `destroy` and `delete`.  The `destroy` style works on the instance. The `delete` style operates on the class.
 
 Firstly you need to find the record to destroy it. After the `destroy` method the object is transitioning from being _hydrated_ (all attributes retained) to _frozen_ (can't modify attributes).
@@ -7849,7 +7880,7 @@ The method `delete_all` without arguments will delete all of the records in the 
 Article.delete_all
 ```</pre>
 </div>
-<div created="20141105120048706" modified="20141105120107406" tags="Rails Rails-Active-Record" title="Active Record: Read" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105120048706" modified="20141117114816363" tags="Rails Rails-Active-Record" title="ActiveRecord: Read" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>Every model class understand the class `find` method. The `find` method can be called in 4 ways:
 
 * `find(:id)`: finds a single record by its unique `id` or multiple records if `:id` is an attay of ids.
@@ -7906,7 +7937,7 @@ Article.where(:title =&gt; 'RailsConf').first
 Article.where(:title =&gt; 'RailsConf').all
 ```</pre>
 </div>
-<div created="20141105120113787" modified="20141105120131825" tags="Rails Rails-Active-Record" title="Active Record: Update" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105120113787" modified="20141117114829654" tags="Rails Rails-Active-Record" title="ActiveRecord: Update" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>Updaing a record is similar to creating a record, the attributes can be updates one at a time and then save the result or update all attrbitues in one action.
 
 When the record is updates, an SQL `UPDATE` statement is constructed behind the scenes.
@@ -7925,13 +7956,37 @@ article.update_attributes(:title =&gt; &quot;RailsConf2014&quot;, :published_at 
 #=&gt; true
 ```</pre>
 </div>
+<div created="20141117115548216" modified="20141117120210118" tags="Rails Rails-Active-Record" title="ActiveRelation" revision="1" bag="default">
+<pre>* Was added in Rails V3.
+* Also known as &quot;ARel&quot;
+* Object-oriented interpretation of relational algebra.
+* Simplifies the generation of complex database  queries:
+  ** Small queries are chainable
+  ** Complex joins and aggregations use efficient SQL
+  ** Queries do not execute until needed
+* ActiveRelation is the underpinning of ActiveRecord
+
+```ruby
+users = User.where(:first_name =&gt; &quot;Joe&quot;)
+users = user.order(&quot;last_name ASC&quot;).limit(5)
+users = user.include(:articles_authored)
+```
+
+```SQL
+SELECT users.*, articles.*
+FROM users
+LEFT JOIN articles ON (users.id = articles.author_id)
+WHERE users.first_name = 'Joe'
+OEDER BY last_name ASC LIMIT 5
+```</pre>
+</div>
 <div created="20141104172545158" modified="20141104172559421" tags="Git" title="Adding a Remote to a Repo" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>```bash
 git remote add origin https://github.com/&lt;username&gt;/first_app.git
 git push -u origin master
 ```</pre>
 </div>
-<div created="20141111113428797" modified="20141111113703199" tags="Rails" title="Advanced Migration Commands" revision="1" bag="default">
+<div created="20141111113428797" modified="20141111113703199" tags="Rails" title="Advanced Migration Commands" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Will run up the specific migration only, without all of the sequential steps up to this version.
 
 ```bash
@@ -8874,7 +8929,7 @@ git push --tags
 git push --tags &lt;tagname&gt;
 ```</pre>
 </div>
-<div created="20141105113041996" modified="20141111112311177" tags="Rails" title="Database Migration" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20141105113041996" modified="20141111112311177" tags="Rails" title="Database Migration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Set of dabase instuctions, written in [[Ruby]] code.
 * Migrate the database from one state to another.
   ** Moving //up// to a new state.
@@ -8928,7 +8983,7 @@ git push --tags &lt;tagname&gt;
 * They are singular as per Rails convention.
 * Always put [[indexes|DB Terms: Index]] on foreign keys.</pre>
 </div>
-<div created="20141108185138295" modified="20141111120426238" title="DB Terms: Index" type="text/vnd.tiddlywiki" revision="2" bag="default">
+<div created="20141108185138295" modified="20141111120426238" title="DB Terms: Index" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Data structure on a table that increases the look-up speed.
 * Like an Index on a back of a book.
 * Should always add index to all [[foreign keys|DB Terms: Foreign Key]].
@@ -9203,7 +9258,7 @@ The datbase [[column|DB Terms: Column]] definitions can also be specified:
 rails generate model User name:string email:string
 ```</pre>
 </div>
-<div created="20141110115347314" modified="20141111112340058" tags="Rails" title="Genetating Migrations" type="text/vnd.tiddlywiki" revision="4" bag="default">
+<div created="20141110115347314" modified="20141111112340058" tags="Rails" title="Genetating Migrations" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Migrations reside in the `/db/migrate` folder of the Rails application.
 * To generate a migration use the [[Rails Generate]] command.
 * Migration names are written in camel case:
@@ -9214,7 +9269,7 @@ rails generate migration DoNothingYet
 
 * Rails generates a new migration when a model is generated.</pre>
 </div>
-<div created="20141111113031528" modified="20141111113118810" tags="Rails" title="Get Migration Status" revision="1" bag="default">
+<div created="20141111113031528" modified="20141111113118810" tags="Rails" title="Get Migration Status" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* To see the status of the migration, see what is up and what is down.
 
 ```bash
@@ -9677,7 +9732,7 @@ add, sub = add_and_subtract(8, 3)	#=&gt; Double assignment to an array
 * Method names and variable names can look the same, be careful.
 * Global `$variable`, class `@@variable` and instance `@variable` can span the scope of the method.</pre>
 </div>
-<div created="20141105115129777" modified="20141111121034742" tags="Rails Rails-Models fix-me" title="Migrate File" type="text/vnd.tiddlywiki" revision="3" bag="default">
+<div created="20141105115129777" modified="20141111121034742" tags="Rails Rails-Models fix-me" title="Migrate File" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Migrations provide a way to alter the structure of the database incrementally, so that our data model can adapt to changing requirements.
 * Migration file is prefixed by a timestamp based on when the migration was generated.
 * `/db/migrate/[timestamp]_create_users.rb`
@@ -9724,7 +9779,7 @@ bundle exec rake test:prepare
 puts &quot;*** Adding an index is next ***&quot;
 ```</pre>
 </div>
-<div created="20141110122009232" modified="20141111114950391" tags="Rails" title="Migration File: Create Table Format" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20141110122009232" modified="20141111114950391" tags="Rails" title="Migration File: Create Table Format" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Generic:
 
 ```ruby
@@ -9749,7 +9804,7 @@ create_table :users do |t|
   t.string :name
 ```</pre>
 </div>
-<div created="20141111114729670" modified="20141111114850965" tags="Rails" title="Migration File: Index Column Options" revision="1" bag="default">
+<div created="20141111114729670" modified="20141111114850965" tags="Rails" title="Migration File: Index Column Options" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* The index column has different options that the regular [[column options|Migration File: Table Column Options]].
 
 ```ruby
@@ -9796,7 +9851,7 @@ end
 |`text`     |
 |`time`     |</pre>
 </div>
-<div created="20141110123545938" modified="20141111113216900" tags="Rails" title="Migration File: Timestamps" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20141110123545938" modified="20141111113216900" tags="Rails" title="Migration File: Timestamps" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* `t.timestamps`: is a special command that creates two columns called `created_at` and `updated_at`, which are timestamps that automatically record when a given user is created and updated.
 * Rails has special columns for creation and updates.
 * Rails automatiaclly populates and updates these columns.
@@ -9812,7 +9867,7 @@ The shorthand for these columns:
 t.timestamps
 ```</pre>
 </div>
-<div created="20141111113724702" modified="20141111120717644" tags="Rails" title="Migration Methods" revision="4" bag="default">
+<div created="20141111113724702" modified="20141111120717644" tags="Rails" title="Migration Methods" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* [[Migrations files|Migrate File]] allow for different methods.
 * Some are reversible with the `change` method, while some are not.
 * Good practice to use the `up` and `down` methods for complex migrations.
@@ -9823,7 +9878,7 @@ t.timestamps
 # [[Migration Methods: Index Migration]]
 # [[Migration Methods: Execute Migration]]</pre>
 </div>
-<div created="20141111114026511" modified="20141111120030816" tags="Rails" title="Migration Methods: Column Migration" revision="5" bag="default">
+<div created="20141111114026511" modified="20141111120030816" tags="Rails" title="Migration Methods: Column Migration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Add column
 * Takes the long-form [[column format|Migration File: Create Table Format]].
 
@@ -9850,7 +9905,7 @@ rename_column(table, column, new_name)
 change_column(table, columns, type, options)
 ```</pre>
 </div>
-<div created="20141111115052352" modified="20141111115238423" tags="Rails" title="Migration Methods: Execute Migration" revision="2" bag="default">
+<div created="20141111115052352" modified="20141111115238423" tags="Rails" title="Migration Methods: Execute Migration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Executes any String of SQL
 * Keep in mind that custom SQL queries will be database specific.
 
@@ -9858,7 +9913,7 @@ change_column(table, columns, type, options)
 execute(&quot;any SQL string&quot;)
 ```</pre>
 </div>
-<div created="20141111114459785" modified="20141111120415314" tags="Rails" title="Migration Methods: Index Migration" revision="7" bag="default">
+<div created="20141111114459785" modified="20141111120415314" tags="Rails" title="Migration Methods: Index Migration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Add index
 * Can also send an array of columns to add indexes to multiple columns.
 * [[Index options|Migration File: Index Column Options]] are different than column options.
@@ -9875,7 +9930,7 @@ add_index(table, column, options)
 remove_index(table, column)
 ```</pre>
 </div>
-<div created="20141111113819117" modified="20141111115026429" tags="Rails" title="Migration Methods: Table Migration" revision="5" bag="default">
+<div created="20141111113819117" modified="20141111115026429" tags="Rails" title="Migration Methods: Table Migration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Create table:
 
 ```ruby
@@ -10599,7 +10654,7 @@ root 'static_pages#home'
 * Stops right away.
 * `exit!`</pre>
 </div>
-<div created="20141111112055837" modified="20141111113333453" tags="Rails" title="Running Migration" revision="6" bag="default">
+<div created="20141111112055837" modified="20141111113333453" tags="Rails" title="Running Migration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Need to run the migration in order to implement the changes in the [[migration file|Migrate File]].
 * Rails will run all of the migration what were not yet run.
 * Most migrations are reversible, which means we can “migrate down” and undo them with a single Rake task, called `db:rollback`.
@@ -10744,6 +10799,12 @@ end
   &lt;%= n %&gt;&lt;br&gt;
 &lt;% end %&gt;
 ```</pre>
+</div>
+<div created="20141117114113966" modified="20141117114248075" tags="Rails" title="Troubleshooting Migrations" revision="1" bag="default">
+<pre>* Comment out executed code lines to get back on track.
+* Write SQL commands as a last resort.
+* Keep migrations small and concise.
+* Test all migraitions in development.</pre>
 </div>
 <div created="20141105112951031" modified="20141105113007556" tags="Rails" title="Undoing Rails Generated Code" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>```bash
