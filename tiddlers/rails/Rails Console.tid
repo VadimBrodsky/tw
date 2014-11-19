@@ -1,5 +1,5 @@
 created: 20141105112835636
-modified: 20141105112859814
+modified: 20141119114519677
 tags: Rails
 title: Rails Console
 type: text/vnd.tiddlywiki
@@ -16,4 +16,8 @@ rails c
 
 ```bash
 rails console --sandbox
+```
+
+```bash
+rails console production
 ```

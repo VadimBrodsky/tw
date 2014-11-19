@@ -1,11 +1,21 @@
 created: 20141110120703906
-modified: 20141110121923341
+modified: 20141119114311946
 tags: Rails Rails-Models
 title: Generating Models
 type: text/vnd.tiddlywiki
 
 * To generate a [[Rails model|Rails Models]] run the [[Rails Generate]] command.
-* This will create a [[migration file|Migrate File]].
+* Model names are written in singular camel-case `ModelName`
+* This will create a [[migration file|Migrate File]] in `db/migrate` 
+  ** File name `date_create_users.rb`.
+  ** Class name for the migration `CreateUsers` 
+  ** Inherit from `ActiveRecord::Migration`
+* Also creates a model file in `app/models`
+  ** File name `user.rb`
+  ** Class name `User`
+  ** Inherits from [[ActiveRecord::Base]]
+* Migration names and classes are plular while Models are singular.
+* File names, class names, and table names matter.
 
 ```bash
 rails generate model User

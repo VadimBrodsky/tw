@@ -1,50 +1,17 @@
 created: 20141105115922996
-modified: 20141117114929140
+modified: 20141119115602778
 tags: Rails-Active-Record Rails
 title: ActiveRecord: Create
 type: text/vnd.tiddlywiki
 
-Creating new objects that will add new records to the database.
+There are 2 ways to create records in Rails:
 
-```ruby
-article = Article.new
-#=> #<Article id: nil, title: nil, body: nil, published_at: nil, created_at: nil, updated_at: nil, excerpt: nil, location: nil>
-```
+[[New / Save Method|ActiveRecord: Create: New/Save]]
 
-To check the attributes of the object use `attributes` method returns a hash. To see if the object was not saved yet use the `new_record?` method.
+# Instantiate object
+# Set values
+# Save
 
-```ruby
-article.new_record?
-#=> true
-article.attributes
-#=> {"body"=>nil, "created_at"=>nil, "excerpt"=>nil, "location"=>nil, "published_at"=>nil, "title"=>nil, "updated_at"=>nil}
-article
-#=> #<Article id: nil, title: nil, body: nil, published_at: nil, created_at: nil, updated_at: nil, excerpt: nil, location: nil>
-```
+[[Create Method|ActiveRecord: Create: Create]]
 
-To add data to the object use the attribute accessor methods.
-
-```ruby
-article.title = 'RailsConf'
-article.body = 'RailsConf is the official gathering for Rails developers..'
-article.published_at = '2013-04-13'
-```
-
-To save the object in the database use the `save` method. It returns `true` for success and `false` for failure.
-
-```ruby
-article.save
-```
-
-The above can be done in fewer lines:
-
-```ruby
-article = Article.new(:title => "Introduction to Active Record", :body => "Active Record is Rails...", :published_at => Date.today)
-article.save
-```
-
-Objects can be created in one step, instead of returning `true` or `false` it returns an `Article` object.
-
-```ruby
-Article.create(:title => "RobyConf 2013", :body => "The annual...", :published_at => '2013-04-13')
-```
+# Instantiate object, set values, save
