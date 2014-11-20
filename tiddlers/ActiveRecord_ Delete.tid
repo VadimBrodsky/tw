@@ -1,38 +1,19 @@
 created: 20141105120137550
-modified: 20141117114839431
+modified: 20141120122137342
 tags: Rails Rails-Active-Record
 title: ActiveRecord: Delete
 type: text/vnd.tiddlywiki
 
-There are two styles of row deletion: `destroy` and `delete`.  The `destroy` style works on the instance. The `delete` style operates on the class.
+There are two styles of row deletion: [[destroy |ActiveRecord: Delete: Destroy]] and [[delete|ActiveRecord: Delete: Delete]].  The [[destroy |ActiveRecord: Delete: Destroy]] style works on the instance. The [[delete|ActiveRecord: Delete: Delete]] style operates on the class.
 
-Firstly you need to find the record to destroy it. After the `destroy` method the object is transitioning from being _hydrated_ (all attributes retained) to _frozen_ (can't modify attributes).
+The [[delete|ActiveRecord: Delete: Delete]] way bypasses some of Rails features and thus less preferred, use [[destroy |ActiveRecord: Delete: Destroy]] instead.
 
-```ruby
-article = Article.last
-article.destroy
-```
+[[ Find / Destroy|ActiveRecord: Delete: Destroy]]
 
-```ruby
-Article.last.destroy
-Article.destroy(1)
-```
+# Find record
+# Destroy
 
-The `delete` family of methods differs from `destroy` in that they don't instantiate or perform callbacks on the object they are deleting. They remove the row immediately from the database.
+[[ Find / Delete|ActiveRecord: Delete: Delete]]
 
-```ruby
-Article.delete(4)
-Article.dete([5, 6])
-```
-
-Deleting with conditions allows to delete all rows that match a condition.
-
-```ruby
-Article.delete_all("published_at" < '2011-01-01')
-```
-
-The method `delete_all` without arguments will delete all of the records in the table.
-
-```ruby
-Article.delete_all
-```
+# Find record
+# Delete

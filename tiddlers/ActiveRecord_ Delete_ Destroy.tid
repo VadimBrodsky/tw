@@ -1,0 +1,17 @@
+created: 20141120121602718
+modified: 20141120121622978
+tags: Rails Rails-Active-Record
+title: ActiveRecord: Delete: Destroy
+type: text/vnd.tiddlywiki
+
+Firstly you need to find the record to destroy it. After the `destroy` method the object is transitioning from being //hydrated// (all attributes retained) to //frozen// (can't modify attributes).
+
+```ruby
+article = Article.last
+article.destroy
+```
+
+```ruby
+Article.last.destroy
+Article.destroy(1)
+```

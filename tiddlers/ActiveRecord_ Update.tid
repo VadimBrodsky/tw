@@ -1,23 +1,18 @@
 created: 20141105120113787
-modified: 20141117114829654
+modified: 20141120120008869
 tags: Rails Rails-Active-Record
 title: ActiveRecord: Update
 type: text/vnd.tiddlywiki
 
-Updaing a record is similar to creating a record, the attributes can be updates one at a time and then save the result or update all attrbitues in one action.
+There are 2 ways to update records:
 
-When the record is updates, an SQL `UPDATE` statement is constructed behind the scenes.
+[[ Find / Save|ActiveRecord: Update: Find/Save]]
 
-```ruby
-article = Article.first
-article.title = "Rails 4.1 Book"
-article.published_at = Time.now
-article.save
-#=> true
-```
+# Find record
+# Set values
+# Save
 
-```ruby
-article = Article.first
-article.update_attributes(:title => "RailsConf2014", :published_at => 1.day.ago)
-#=> true
-```
+[[ Find / update_attributes method|ActiveRecord: Update: Update_Attributes]]
+
+# Find record
+# Set values, save
