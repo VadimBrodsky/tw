@@ -199,9 +199,17 @@ Error message and password prompt
 
 <li>ActiveRecord: Delete</li>
 
+<li>ActiveRecord: Delete: Delete</li>
+
+<li>ActiveRecord: Delete: Destroy</li>
+
 <li>ActiveRecord: Read</li>
 
 <li>ActiveRecord: Update</li>
+
+<li>ActiveRecord: Update: Find/Save</li>
+
+<li>ActiveRecord: Update: Update_Attributes</li>
 
 <li>ActiveRecord::Base</li>
 
@@ -320,8 +328,6 @@ Error message and password prompt
 <li>Default Route</li>
 
 <li>Delete Branch</li>
-
-<li>Draft of 'ActiveRecord: Create: New/Save'</li>
 
 <li>Embedded Ruby - ERb</li>
 
@@ -7627,8 +7633,8 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div created="20141104134936346" modified="20141104135010837" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>tw</pre>
 </div>
-<div modified="20141119112217677" title="$:/state/tab/sidebar--1835078512" revision="9" bag="default">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div modified="20141120111044247" title="$:/state/tab/sidebar--1835078512" revision="1" bag="default">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn" revision="2" bag="default">
 <pre>yes</pre>
@@ -7636,7 +7642,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="GettingStarted Index" title="$:/StoryList" revision="72" bag="default">
+<div list="GettingStarted Index" title="$:/StoryList" revision="116" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -7653,10 +7659,10 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
     }
 }</pre>
 </div>
-<div created="20141119113832391" modified="20141119115551259" title="$:/temp/NewTagName" revision="11" bag="default">
+<div created="20141120115521900" modified="20141120121829779" title="$:/temp/NewTagName" revision="18" bag="default">
 <pre></pre>
 </div>
-<div created="20141119112219336" modified="20141119121335087" title="$:/temp/search" revision="45" bag="default">
+<div created="20141120111623287" modified="20141120122156678" title="$:/temp/search" revision="79" bag="default">
 <pre></pre>
 </div>
 <div created="20141104173510177" modified="20141104173509021" title="$:/theme" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -7802,7 +7808,7 @@ Article.count
 #=&gt; 5
 ```</pre>
 </div>
-<div created="20141105115922996" modified="20141119115602778" tags="Rails-Active-Record Rails" title="ActiveRecord: Create" type="text/vnd.tiddlywiki" revision="6" bag="default">
+<div created="20141105115922996" modified="20141119115602778" tags="Rails-Active-Record Rails" title="ActiveRecord: Create" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>There are 2 ways to create records in Rails:
 
 [[New / Save Method|ActiveRecord: Create: New/Save]]
@@ -7815,7 +7821,7 @@ Article.count
 
 # Instantiate object, set values, save</pre>
 </div>
-<div created="20141119115550003" modified="20141119120903247" tags="Rails Rails-Active-Record" title="ActiveRecord: Create: Create" revision="2" bag="default">
+<div created="20141119115550003" modified="20141119120903247" tags="Rails Rails-Active-Record" title="ActiveRecord: Create: Create" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Objects can be created in one step using the class method `create`
 * Instead of returning `true` or `false` it returns an `Article` object.
 * Up to you to check if this is indeed a new object or not.
@@ -7824,7 +7830,7 @@ Article.count
 Article.create(:title =&gt; &quot;RobyConf 2013&quot;, :body =&gt; &quot;The annual...&quot;, :published_at =&gt; '2013-04-13')
 ```</pre>
 </div>
-<div created="20141119115335754" modified="20141119121012800" tags="Rails Rails-Active-Record" title="ActiveRecord: Create: New/Save" revision="13" bag="default">
+<div created="20141119115335754" modified="20141119121012800" tags="Rails Rails-Active-Record" title="ActiveRecord: Create: New/Save" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Creating new objects that will add new records to the database.
 
 !! New
@@ -7881,22 +7887,23 @@ article.save
 # [[ActiveRecord: Update]]
 # [[ActiveRecord: Delete]]</pre>
 </div>
-<div created="20141105120137550" modified="20141117114839431" tags="Rails Rails-Active-Record" title="ActiveRecord: Delete" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>There are two styles of row deletion: `destroy` and `delete`.  The `destroy` style works on the instance. The `delete` style operates on the class.
+<div created="20141105120137550" modified="20141120122137342" tags="Rails Rails-Active-Record" title="ActiveRecord: Delete" type="text/vnd.tiddlywiki" revision="10" bag="default">
+<pre>There are two styles of row deletion: [[destroy |ActiveRecord: Delete: Destroy]] and [[delete|ActiveRecord: Delete: Delete]].  The [[destroy |ActiveRecord: Delete: Destroy]] style works on the instance. The [[delete|ActiveRecord: Delete: Delete]] style operates on the class.
 
-Firstly you need to find the record to destroy it. After the `destroy` method the object is transitioning from being _hydrated_ (all attributes retained) to _frozen_ (can't modify attributes).
+The [[delete|ActiveRecord: Delete: Delete]] way bypasses some of Rails features and thus less preferred, use [[destroy |ActiveRecord: Delete: Destroy]] instead.
 
-```ruby
-article = Article.last
-article.destroy
-```
+[[ Find / Destroy|ActiveRecord: Delete: Destroy]]
 
-```ruby
-Article.last.destroy
-Article.destroy(1)
-```
+# Find record
+# Destroy
 
-The `delete` family of methods differs from `destroy` in that they don't instantiate or perform callbacks on the object they are deleting. They remove the row immediately from the database.
+[[ Find / Delete|ActiveRecord: Delete: Delete]]
+
+# Find record
+# Delete</pre>
+</div>
+<div created="20141120121828845" modified="20141120121926095" tags="Rails Rails-Active-Record" title="ActiveRecord: Delete: Delete" revision="1" bag="default">
+<pre>The `delete` family of methods differs from `destroy` in that they don't instantiate or perform callbacks on the object they are deleting. They remove the row immediately from the database.
 
 ```ruby
 Article.delete(4)
@@ -7913,6 +7920,19 @@ The method `delete_all` without arguments will delete all of the records in the 
 
 ```ruby
 Article.delete_all
+```</pre>
+</div>
+<div created="20141120121602718" modified="20141120121622978" tags="Rails Rails-Active-Record" title="ActiveRecord: Delete: Destroy" revision="2" bag="default">
+<pre>Firstly you need to find the record to destroy it. After the `destroy` method the object is transitioning from being //hydrated// (all attributes retained) to //frozen// (can't modify attributes).
+
+```ruby
+article = Article.last
+article.destroy
+```
+
+```ruby
+Article.last.destroy
+Article.destroy(1)
 ```</pre>
 </div>
 <div created="20141105120048706" modified="20141117114816363" tags="Rails Rails-Active-Record" title="ActiveRecord: Read" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -7972,7 +7992,21 @@ Article.where(:title =&gt; 'RailsConf').first
 Article.where(:title =&gt; 'RailsConf').all
 ```</pre>
 </div>
-<div created="20141105120113787" modified="20141117114829654" tags="Rails Rails-Active-Record" title="ActiveRecord: Update" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20141105120113787" modified="20141120120008869" tags="Rails Rails-Active-Record" title="ActiveRecord: Update" type="text/vnd.tiddlywiki" revision="10" bag="default">
+<pre>There are 2 ways to update records:
+
+[[ Find / Save|ActiveRecord: Update: Find/Save]]
+
+# Find record
+# Set values
+# Save
+
+[[ Find / update_attributes method|ActiveRecord: Update: Update_Attributes]]
+
+# Find record
+# Set values, save</pre>
+</div>
+<div created="20141120115519040" modified="20141120120659040" tags="Rails Rails-Active-Record" title="ActiveRecord: Update: Find/Save" revision="2" bag="default">
 <pre>Updaing a record is similar to creating a record, the attributes can be updates one at a time and then save the result or update all attrbitues in one action.
 
 When the record is updates, an SQL `UPDATE` statement is constructed behind the scenes.
@@ -7986,12 +8020,28 @@ article.save
 ```
 
 ```ruby
-article = Article.first
-article.update_attributes(:title =&gt; &quot;RailsConf2014&quot;, :published_at =&gt; 1.day.ago)
+subject = Subject.find(1)
+subject.name = &quot;Initial Subject&quot;
+subject.save
 #=&gt; true
 ```</pre>
 </div>
-<div created="20141119113821105" modified="20141119114210060" tags="Rails Rails-Active-Record" title="ActiveRecord::Base" revision="1" bag="default">
+<div created="20141120115649899" modified="20141120120942606" tags="Rails Rails-Active-Record" title="ActiveRecord: Update: Update_Attributes" revision="2" bag="default">
+<pre>Allows for mass assignment of attributes to be updates all at once.
+
+```ruby
+article = Article.first
+article.update_attributes(:title =&gt; &quot;RailsConf2014&quot;, :published_at =&gt; 1.day.ago)
+#=&gt; true
+```
+
+```ruby
+subject = Subject.find(2)
+subject.update_attributes(:name =&gt; &quot;Next Subject&quot;, :visible =&gt; true)
+#=&gt; true
+```</pre>
+</div>
+<div created="20141119113821105" modified="20141119114210060" tags="Rails Rails-Active-Record" title="ActiveRecord::Base" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* ActiveRecord uses conventions in the file / table names as per [[Generating Models]].
 * ActiveRecord also gives attributes to every column in the table, no need to write `attr_accessor`.
 
@@ -9072,48 +9122,6 @@ match ':controller(/:action(/:id(.:format)))', ;via =&gt; :get
 git branch -d branch-name
 ```</pre>
 </div>
-<div created="20141119115941034" modified="20141119115941034" title="Draft of 'ActiveRecord: Create: New/Save'" revision="79" bag="default">
-<pre>Creating new objects that will add new records to the database.
-
-```ruby
-article = Article.new
-#=&gt; #&lt;Article id: nil, title: nil, body: nil, published_at: nil, created_at: nil, updated_at: nil, excerpt: nil, location: nil&gt;
-```
-
-* To check the attributes of the object use `attributes` method returns a hash.
-* To see if the object was not saved yet use the `new_record?` method.
-
-```ruby
-article.new_record?
-#=&gt; true
-article.attributes
-#=&gt; {&quot;body&quot;=&gt;nil, &quot;created_at&quot;=&gt;nil, &quot;excerpt&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;published_at&quot;=&gt;nil, &quot;title&quot;=&gt;nil, &quot;updated_at&quot;=&gt;nil}
-article
-#=&gt; #&lt;Article id: nil, title: nil, body: nil, published_at: nil, created_at: nil, updated_at: nil, excerpt: nil, location: nil&gt;
-```
-
-* To add data to the object use the attribute accessor methods (inherited from the [[ActiveRecord::Base]] class).
-
-```ruby
-article.title = 'RailsConf'
-article.body = 'RailsConf is the official gathering for Rails developers..'
-article.published_at = '2013-04-13'
-```
-
-To save the object in the database use the `save` method. It returns `true` for success and `false` for failure.
-
-```ruby
-article.save
-```
-
-!! 
-The above can be done in fewer lines:
-
-```ruby
-article = Article.new(:title =&gt; &quot;Introduction to Active Record&quot;, :body =&gt; &quot;Active Record is Rails...&quot;, :published_at =&gt; Date.today)
-article.save
-```</pre>
-</div>
 <div created="20141105113634451" modified="20141108164125783" tags="Rails ERb" title="Embedded Ruby - ERb" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>{{ ERb Template Tags }}
 
@@ -9331,7 +9339,7 @@ rails generate controller Users new
 rails generate controller Users new --no-test-framework
 ```</pre>
 </div>
-<div created="20141110120703906" modified="20141119114311946" tags="Rails Rails-Models" title="Generating Models" type="text/vnd.tiddlywiki" revision="6" bag="default">
+<div created="20141110120703906" modified="20141119114311946" tags="Rails Rails-Models" title="Generating Models" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* To generate a [[Rails model|Rails Models]] run the [[Rails Generate]] command.
 * Model names are written in singular camel-case `ModelName`
 * This will create a [[migration file|Migrate File]] in `db/migrate` 
@@ -10538,7 +10546,7 @@ git push origin branch-name
 * Primary 3 features: asset directories, manifest files, and pre-processor engines.
 * With the asset pipeline, in production all the application stylesheets get rolled into `application.css`, all the application JavaScript code gets rolled into `javascripts.js`, and all such files (including those in lib/assets and vendor/assets) are minified.</pre>
 </div>
-<div created="20141105112835636" modified="20141119114519677" tags="Rails" title="Rails Console" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20141105112835636" modified="20141119114519677" tags="Rails" title="Rails Console" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Rails comes with a modified version of IRB.
 * It has access to all of Rails methods and the app database.
 * By default it start in the development environment.
